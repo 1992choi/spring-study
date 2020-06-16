@@ -42,7 +42,7 @@
 							<li><a href="#">Menu #2</a></li>
 							<li><a href="#">Menu #3</a></li>
 							<li><a href="#">Menu #4</a></li>
-							<li><a href="#">Menu #5</a></li>
+							<li><a href="/choi/contact.do">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -126,7 +126,7 @@
 									<a href="#"><i class="icon-dribbble2"></i></a>
 								</p>
 								<p>
-									<a href="#" class="btn btn-primary btn-outline">Contact Me!</a>
+									<a href="/choi/contact.do" class="btn btn-primary btn-outline">Contact Me!</a>
 								</p>
 							</div>
 						</div>
