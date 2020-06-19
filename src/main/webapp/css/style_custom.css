@@ -1,3 +1,11 @@
 .cst_align_left {
 	text-align: left !important;
 }
+
+.cst_va_sub {
+	vertical-align: sub;
+}
+
+.cst_pd_top60 {
+	padding-top: 60px;
+}

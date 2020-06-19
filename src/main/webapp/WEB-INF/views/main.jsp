@@ -82,7 +82,7 @@
 		<div id="colorlib-about">
 			<div class="container">
 				<div class="row text-center">
-					<h2 class="bold">About</h2>
+					<h2 class="bold">Profile</h2>
 				</div>
 				<div class="row">
 					<div class="col-md-5 animate-box">
@@ -105,28 +105,26 @@
 								</div>
 								<div class="item">
 									<h2>
-										<span>I'm</span><span>A Web Developer</span>
+										<span>Web</span><span>Developer</span>
 									</h2>
 								</div>
 							</div>
 							<div class="desc">
 								<div class="rotate">
-									<h2 class="heading">About</h2>
+									<h2 class="heading">Profile</h2>
 								</div>
 								<p>
-									HSForce (2019.06 ~ )<br>
-									HANDYSOFT (2017.07 ~ 2019.05)
+									<h3>최영근 (1992.07.31)</h3>
 								</p>
-								<p>younggeunn@naver.com</p>
-								
-								<p class="colorlib-social-icons">
-									<a href="#"><i class="icon-facebook4"></i></a> 
-									<a href="#"><i class="icon-twitter3"></i></a>
-									<a href="#"><i class="icon-googleplus"></i></a>
-									<a href="#"><i class="icon-dribbble2"></i></a>
-								</p>
-								<p>
-									<a href="/choi/contact.do" class="btn btn-primary btn-outline">Contact Me!</a>
+								<p class="colorlib-social-icons cst_pd_top60">
+									<a class="cst_va_sub"><i class="icon-smartphone"></i></a>
+									+82 10-4884-8084
+									<br>
+									<a class="cst_va_sub" href="javascript: window.open('https://github.com/19920731', '_target');"><i class="icon-github2"></i></a>
+									https://github.com/19920731
+									<br>
+									<a class="cst_va_sub" href="/choi/contact.do"><i class="icon-mail5"></i></a>
+									younggeunn@naver.com
 								</p>
 							</div>
 						</div>
@@ -151,43 +149,39 @@
 									</div>
 									<div class="col-md-6">
 										<div class="services animate-box">
-											<h3>Skill</h3>
+											<h3>경력사항</h3>
 											<ul>
-												<li>JAVA</li>
-												<li>JSP</li>
-												<li>Javascript</li>
-												<li>Spring</li>
+												<li>HSForce(자회사)<br>(2019.06 ~ )</li>
+												<li>HANDYSOFT<br>(2017.07 ~ 2019.05)</li>
 											</ul>
 										</div>
 										<div class="services animate-box">
-											<h3>Skill</h3>
+											<h3>교육</h3>
 											<ul>
-												<li>JAVA</li>
-												<li>JSP</li>
-												<li>Javascript</li>
-												<li>Spring</li>
+												<li>자바 개발자 양성 과정<br>(KH 정보교육원)</li>
+												<li>스프링 프레임워크<br>(SK T아카데미)</li>
+												<li>데이터베이스<br>(SK T아카데미)</li>
 											</ul>
-										</div>
+										</div>																			
 									</div>
 									<div class="col-md-6">
 										<div class="services animate-box">
-											<h3>Skill</h3>
+											<h3>보유기술</h3>
 											<ul>
 												<li>JAVA</li>
 												<li>JSP</li>
+												<li>Spring framework</li>
 												<li>Javascript</li>
-												<li>Spring</li>
+												<li>jQuery</li>
+												<li>MyBatis</li>
 											</ul>
 										</div>
 										<div class="services animate-box">
-											<h3>Skill</h3>
+											<h3>자격증</h3>
 											<ul>
-												<li>JAVA</li>
-												<li>JSP</li>
-												<li>Javascript</li>
-												<li>Spring</li>
+												<li>정보처리기사</li>
 											</ul>
-										</div>
+										</div>										
 									</div>
 								</div>
 							</div>
@@ -369,7 +363,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 text-center">
-							<p>Copyright &copy; CHOI</p>
+							<p>Copyright &copy; CHOI | This template is made by Colorlib</p>
 						</div>
 					</div>
 				</div>
