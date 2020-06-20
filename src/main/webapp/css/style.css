@@ -111,15 +111,6 @@ h1, h2, h3, h4, h5, h6 {
 	transform: scale(1);
 }
 
-.menu-show #colorlib-page {
-	-webkit-transform: scale(0.99);
-	-moz-transform: scale(0.99);
-	-ms-transform: scale(0.99);
-	-o-transform: scale(0.99);
-	transform: scale(0.99);
-	position: relative;
-}
-
 .menu-show #colorlib-page:after {
 	position: absolute;
 	top: 0;
@@ -171,11 +162,10 @@ h1, h2, h3, h4, h5, h6 {
 #colorlib-main-nav .colorlib-nav-toggle {
 	position: absolute;
 	top: 5px;
-	right: 40px;
+	right: 6px;
 	padding: 20px;
 	height: 44px;
 	width: 44px;
-	background: rgba(0, 0, 0, 0.05);
 	line-height: 0;
 	padding: 0 !important;
 	visibility: hidden;
@@ -184,9 +174,6 @@ h1, h2, h3, h4, h5, h6 {
 	-moz-border-radius: 2px;
 	-ms-border-radius: 2px;
 	border-radius: 2px;
-	-webkit-transition: 0.3s;
-	-o-transition: 0.3s;
-	transition: 0.3s;
 }
 
 #colorlib-main-nav .colorlib-nav-toggle i {

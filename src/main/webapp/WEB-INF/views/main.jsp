@@ -151,14 +151,14 @@
 										<div class="services animate-box">
 											<h3>경력사항</h3>
 											<ul>
-												<li>HSForce(자회사)<br>(2019.06 ~ )</li>
-												<li>HANDYSOFT<br>(2017.07 ~ 2019.05)</li>
+												<li>HSForce(핸디 자회사)<br>(2019.06 ~ )</li>
+												<li>핸디소프트<br>(2017.07 ~ 2019.05)</li>
 											</ul>
 										</div>
 										<div class="services animate-box">
 											<h3>교육</h3>
 											<ul>
-												<li>자바 개발자 양성 과정<br>(KH 정보교육원)</li>
+												<li>자바 프로그램 개발자 양성 과정<br>(KH 정보교육원)</li>
 												<li>스프링 프레임워크<br>(SK T아카데미)</li>
 												<li>데이터베이스<br>(SK T아카데미)</li>
 											</ul>
@@ -363,7 +363,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 text-center">
-							<p>Copyright &copy; CHOI | This template is made by Colorlib</p>
+							<p>&copy; 2020. CHOI. All rights reserved.<br>(Design by Colorlib)</p>
 						</div>
 					</div>
 				</div>
