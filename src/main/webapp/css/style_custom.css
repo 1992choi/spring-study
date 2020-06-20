@@ -6,6 +6,10 @@
 	vertical-align: sub !important;
 }
 
+.cst_pd_top30 {
+	padding-top: 30px !important;
+}
+
 .cst_pd_top60 {
 	padding-top: 60px !important;
 }
@@ -28,6 +32,10 @@
 
 .cst_pd_top500 {
 	padding-top: 500px !important;
+}
+
+.cst_pd_bottom30 {
+	padding-bottom: 30px !important;
 }
 
 .cst_pd_bottom60 {

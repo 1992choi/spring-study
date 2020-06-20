@@ -81,7 +81,7 @@
 								<p>
 									<h3>최영근 (1992.07.31)</h3>
 								</p>
-								<p class="colorlib-social-icons cst_pd_top60">
+								<p class="colorlib-social-icons cst_pd_top30">
 									<a class="cst_va_sub"><i class="icon-smartphone"></i></a>
 									+82 10-4884-8084
 									<br>
@@ -90,6 +90,34 @@
 									<br>
 									<a class="cst_va_sub" href="/choi/contact.do"><i class="icon-mail5"></i></a>
 									younggeunn@naver.com
+									<br>
+									<a class="cst_va_sub" href="javascript: shareKako();"><i class="icon-share-2"></i></a>
+									Share with KakaoTalk
+									<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+									<script type="text/javascript">
+										// input your appkey
+										Kakao.init('<c:out value="${kakaoJsKey}"/>');
+									
+										function shareKako() {
+											Kakao.Link.sendDefault({
+												objectType: 'feed',
+												content: {
+													title: "Choi's WEB",
+												    description: '',
+												    imageUrl: 'http://27.96.134.221:8080/choi/images/about.jpg',
+												    link: {
+												      mobileWebUrl: 'http://27.96.134.221:8080/choi',
+												    },
+												},
+												success: function(response) {
+													console.log(response);
+												},
+												fail: function(error) {
+													console.log(error);
+												}
+											});
+										}
+									</script>
 								</p>
 							</div>
 						</div>
