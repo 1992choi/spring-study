@@ -11,6 +11,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +21,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ContactController {
 	
+	@Value("${mail.id}") 
+	private String mailId;
+	
+	@Value("${mail.password}") 
+	private String mailPassword;
+
 	@RequestMapping(value = "/contact.do", method = RequestMethod.GET)
 	public String contact() {
 		return "contact";
@@ -44,7 +51,7 @@ public class ContactController {
         
         Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("user_id", "user_password");
+                return new PasswordAuthentication(mailId, mailPassword);
             }
         });
 

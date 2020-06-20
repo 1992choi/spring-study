@@ -35,6 +35,11 @@
 	<beans:bean id="cronTask" class="app.web.choi.common.CronTask" />
     <task:scheduler id="cronScheduler" pool-size="10" />
     <task:annotation-driven scheduler="cronScheduler" />
+    
+    <beans:bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <beans:property name="location" value="/WEB-INF/config/config.properties"/>
+        <beans:property name="fileEncoding" value="UTF-8" />
+    </beans:bean>
 	
 	
 </beans:beans>
