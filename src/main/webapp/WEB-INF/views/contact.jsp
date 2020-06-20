@@ -1,4 +1,5 @@
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -26,9 +27,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Modernizr JS -->
 <script src="./js/modernizr-2.6.2.min.js"></script>
-<!-- jquery -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="application/javascript">
+<script type="text/javascript">
 	function sendMail() {
 		$.ajax({
 		    url: "/choi/contact/sendMail.json",
@@ -56,41 +55,7 @@
 </script>
 </head>
 <body>
-	<nav id="colorlib-main-nav" role="navigation">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
-		<div class="js-fullheight colorlib-table">
-			<div class="colorlib-table-cell js-fullheight">
-				<div class="row">
-					<div class="col-md-12">
-						<ul>
-							<li class="active"><a href="/choi/main.do">Home</a></li>
-							<li><a href="#">Menu #1</a></li>
-							<li><a href="#">Menu #2</a></li>
-							<li><a href="#">Menu #3</a></li>
-							<li><a href="#">Menu #4</a></li>
-							<li><a href="/choi/contact.do">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<a href="./images/menu_img1.jpg" class="gallery image-popup-link text-center" style="background-image: url(./images/menu_img1.jpg);"> 
-							<span><i class="icon-search3"></i></span>
-						</a> 
-						<a href="./images/menu_img2.jpg" class="gallery image-popup-link text-center" style="background-image: url(./images/menu_img2.jpg);">
-							<span><i class="icon-search3"></i></span>
-						</a> 
-						<a href="./images/menu_img3.jpg" class="gallery image-popup-link text-center" style="background-image: url(./images/menu_img3.jpg);">
-							<span><i class="icon-search3"></i></span>
-						</a>
-						<a href="./images/menu_img4.jpg" class="gallery image-popup-link text-center" style="background-image: url(./images/menu_img4.jpg);">
-							<span><i class="icon-search3"></i></span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</nav>
+	<jsp:include page="./nav.jsp" />
 	
 	<div id="colorlib-page">
 		<header>
@@ -170,17 +135,7 @@
 			</div>
 		</div>
 
-		<footer>
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 text-center">
-							<p>Copyright &copy; CHOI</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+		<jsp:include page="./footer.jsp" />
 	
 	</div>
 
