@@ -12,9 +12,9 @@ public class ApiController {
 	@Value("${kakao.js.key}") 
 	private String kakaoJsKey;
 	
-	@RequestMapping(value = "/api.do", method = RequestMethod.GET)
-	public ModelAndView kakao() {
-		ModelAndView mav = new ModelAndView("api");
+	@RequestMapping(value = "/navi.do", method = RequestMethod.GET)
+	public ModelAndView navi() {
+		ModelAndView mav = new ModelAndView("navi");
 		mav.addObject("kakaoJsKey", kakaoJsKey);
 		return mav;
 	}

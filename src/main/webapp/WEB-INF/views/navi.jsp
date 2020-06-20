@@ -239,13 +239,13 @@
 		<div id="colorlib-about">
 			<div class="container">
 				<div class="row text-center">
-					<h2 class="bold">MAP</h2>
+					<h2 class="bold">Navi</h2>
 				</div>
 				<div class="row cst_pd_top60 cst_pd_bottom400">
 					<div class="map_wrap">
 					    <div id="menu_wrap" class="bg_white">
 							<div class="option">
-							    <input type="text" value="봉담 맛집" id="keyword" size="15"> 
+							    <input type="text" value="봉담 맛집" id="keyword" size="15" onKeypress="javascript:if(event.keyCode==13) {searchPlaces();}"> 
 								<a href="javascript: searchPlaces();"><i class="icon-search2"></i></a>
 							</div>
 							<hr>
@@ -331,8 +331,7 @@
 							    removeMarker();
 							    
 							    for ( var i=0; i<places.length; i++ ) {
-							
-							        // 마커를 생성하고 지도에 표시합니다
+							    	// 마커를 생성하고 지도에 표시합니다
 							        var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
 							            marker = addMarker(placePosition, i), 
 							            itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
@@ -344,8 +343,12 @@
 							        // 마커와 검색결과 항목에 mouseover 했을때
 							        // 해당 장소에 인포윈도우에 장소명을 표시합니다
 							        // mouseout 했을 때는 인포윈도우를 닫습니다
-							        (function(marker, title) {
-							            kakao.maps.event.addListener(marker, 'mouseover', function() {
+							        (function(marker, title, x, y) {
+							        	kakao.maps.event.addListener(marker, 'click', function() {
+							        		navi(marker, title, x, y);
+							            });
+							        	
+							        	kakao.maps.event.addListener(marker, 'mouseover', function() {
 							                displayInfowindow(marker, title);
 							            });
 							
@@ -360,7 +363,7 @@
 							            itemEl.onmouseout =  function () {
 							                infowindow.close();
 							            };
-							        })(marker, places[i].place_name);
+							        })(marker, places[i].place_name, places[i].x, places[i].y);
 							
 							        fragment.appendChild(itemEl);
 							    }
@@ -458,6 +461,18 @@
 							}
 							
 							// 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
+							// 내비를 시작합니다.
+							function navi(marker, title, positionX, positionY) {
+								if (confirm('길 안내를 시작하겠습니까?')) {
+									Kakao.Navi.start({
+									    name: title,
+									    x: parseFloat(positionX),
+									    y: parseFloat(positionY),
+									    coordType: 'wgs84'
+									});
+								}
+							}
+							
 							// 인포윈도우에 장소명을 표시합니다
 							function displayInfowindow(marker, title) {
 							    var content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
@@ -472,8 +487,7 @@
 							        el.removeChild (el.lastChild);
 							    }
 							}
-						</script>
-										
+						</script>										
 					</div>
 				</div>
 			</div>
