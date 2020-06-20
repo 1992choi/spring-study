@@ -6,7 +6,7 @@
 					<div class="col-md-12">
 						<ul>
 							<li class="active"><a href="/choi/main.do">Home</a></li>
-							<li><a href="#">Menu #1</a></li>
+							<li><a href="/choi/api.do">API</a></li>
 							<li><a href="#">Menu #2</a></li>
 							<li><a href="#">Menu #3</a></li>
 							<li><a href="#">Menu #4</a></li>
