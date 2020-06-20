@@ -43,6 +43,10 @@
 		    success: function(data){
 		    	if (data.result == 'success') {
 		    		alert('발송을 성공했습니다.');
+		    		$('#subject').val('');
+			    	$('#message').val('');
+			    	$('#sender').val('');
+			    	$('#senderEmail').val('');		 
 		    	} else {
 		    		alert('발송을 실패했습니다.');
 		    	}
