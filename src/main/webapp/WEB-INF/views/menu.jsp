@@ -17,7 +17,7 @@
 							<li>
 								<a href="javascript: openSubMenu('algorithm');">Algorithm</a>
 								<ul id="sub_algorithm" class="sub_menu dn">
-									<li><a href="#">Algorithm #1</a></li>
+									<li><a href="/choi/algorithm.do?page=sort">Sort</a></li>
 									<li><a href="#">Algorithm #2</a></li>
 									<li><a href="#">Algorithm #3</a></li>
 									<li><a href="#">Algorithm #4</a></li>
