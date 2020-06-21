@@ -61,3 +61,15 @@
 .cst_pd_bottom500 {
 	padding-bottom: 500px !important;
 }
+
+.dn {
+	display: none;
+}
+
+#colorlib-main-nav .sub_menu li {
+	margin-left: 20px;
+	list-style: circle;	
+}
+#colorlib-main-nav .sub_menu li a {
+	color: lightgrey;
+}

@@ -1,3 +1,9 @@
+	<script type="text/javascript">	
+		function openSubMenu(subMenu) {
+			$('.sub_menu').hide();
+			$('#sub_' + subMenu).show();
+		}
+	</script>
 	<nav id="colorlib-main-nav" role="navigation">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
 		<div class="js-fullheight colorlib-table">
@@ -5,12 +11,24 @@
 				<div class="row">
 					<div class="col-md-12">
 						<ul>
-							<li class="active"><a href="/choi/main.do">Home</a></li>
-							<li><a href="/choi/navi.do">NAVI</a></li>
-							<li><a href="#">Menu #2</a></li>
-							<li><a href="#">Menu #3</a></li>
-							<li><a href="#">Menu #4</a></li>
-							<li><a href="/choi/contact.do">Contact</a></li>
+							<li class="active">
+								<a  class="cst_va_sub" href="/choi/main.do"><i class="icon-home"></i> HOME</a>
+							</li>
+							<li>
+								<a href="javascript: openSubMenu('algorithm');">Algorithm</a>
+								<ul id="sub_algorithm" class="sub_menu dn">
+									<li><a href="#">Algorithm #1</a></li>
+									<li><a href="#">Algorithm #2</a></li>
+									<li><a href="#">Algorithm #3</a></li>
+									<li><a href="#">Algorithm #4</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="/choi/navi.do">Navi</a>
+							</li>
+							<li>
+								<a href="/choi/contact.do">Contact</a>
+							</li>
 						</ul>
 					</div>
 				</div>
