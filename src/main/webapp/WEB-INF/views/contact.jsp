@@ -59,7 +59,7 @@
 </script>
 </head>
 <body>
-	<jsp:include page="./nav.jsp" />
+	<jsp:include page="./menu.jsp" />
 	
 	<div id="colorlib-page">
 		<header>
