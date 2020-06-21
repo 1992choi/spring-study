@@ -30,7 +30,7 @@
 <script type="text/javascript">
 	function showCode(sort) {
 		$.ajax({
-		    url: '/choi/json/algorithm/' + sort + 'Sort.jsp',
+		    url: '/choi/json/algorithm/sort/' + sort + 'Sort.jsp',
 		    type: 'POST',
 		    cache: false,
 		    dataType: 'html',
