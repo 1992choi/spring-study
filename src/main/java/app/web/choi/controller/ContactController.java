@@ -33,9 +33,11 @@ public class ContactController {
 	}
 	
 	@RequestMapping(value = "/contact/sendMail.json")
-    public ModelAndView sendMail(@RequestParam("sender") final String sender, 
-    		@RequestParam("senderEmail") String senderEmail, @RequestParam("subject") String subject,
-    		@RequestParam("message") final String message) {
+    public ModelAndView sendMail(
+    		@RequestParam("sender") String sender, 
+    		@RequestParam("senderEmail") String senderEmail, 
+    		@RequestParam("subject") String subject,
+    		@RequestParam("message") String message) {
         
 		ModelAndView mav = new ModelAndView("jsonView");
 		 
