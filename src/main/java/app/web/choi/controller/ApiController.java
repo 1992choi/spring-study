@@ -14,7 +14,7 @@ public class ApiController {
 	
 	@RequestMapping(value = "/navi.do", method = RequestMethod.GET)
 	public ModelAndView navi() {
-		ModelAndView mav = new ModelAndView("navi");
+		ModelAndView mav = new ModelAndView("api/navi");
 		mav.addObject("kakaoJsKey", kakaoJsKey);
 		return mav;
 	}

@@ -220,7 +220,7 @@
 <script src="./js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-	<jsp:include page="./menu.jsp" />
+	<jsp:include page="../menu.jsp" />
 
 	<div id="colorlib-page">
 		<header>
@@ -258,7 +258,7 @@
 			</div>
 		</div>
 
-		<jsp:include page="./footer.jsp" />
+		<jsp:include page="../footer.jsp" />
 
 	</div>
 	
