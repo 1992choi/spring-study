@@ -93,7 +93,7 @@
 									<br>
 									<a class="cst_va_sub" href="javascript: shareKako();"><i class="icon-share-2"></i></a>
 									Share with KakaoTalk
-									<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+									<script type="text/javascript" src="./js/kakao.js"></script>
 									<script type="text/javascript">
 										// input your appkey
 										Kakao.init('<c:out value="${kakaoJsKey}"/>');
