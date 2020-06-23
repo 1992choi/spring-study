@@ -65,9 +65,9 @@ public class ContactController {
             mimeMessage.setSubject(subject);
             mimeMessage.setText(body);
             Transport.send(mimeMessage);
-            mav.addObject("result", (Object)"success");        
+            mav.addObject("result", "success");        
         } catch (MessagingException e) {
-            mav.addObject("result", (Object)"fail");
+            mav.addObject("result", "fail");
         }
         return mav;
     }
