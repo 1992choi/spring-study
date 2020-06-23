@@ -27,6 +27,29 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Modernizr JS -->
 <script src="./js/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript">
+	function getPjtDetail(pjtName) {
+		$.ajax({
+		    url: '/choi/main/getPjtDetail.do',
+		    type: 'POST',
+		    cache: false,
+		    dataType: 'html',
+		    data: {
+		    	pjtName: pjtName
+		    },
+		    success: function(data){
+		    	var obj = JSON.parse(data);
+		    	$('#pjtName').html(obj.pjtName + ' (상세)');
+		    	$('#pjtName').show();
+		    	$('#pjtDetail').html(obj.pjtDetail);
+		    	$('#pjtDetail').show();
+		    },		    
+		    error: function (request, status, error){        
+		    	console.log('getPjtDetail() Err');
+		    }
+		});		
+	}
+</script>
 </head>
 <body>
 	<jsp:include page="./menu.jsp" />
@@ -207,7 +230,7 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="#" class="blog-img"> 
+									<a href="javascript: getPjtDetail('hf');" class="blog-img"> 
 										<img class="img-responsive" src="./images/pjt_hf.png">
 										<div class="overlay"></div>
 										<div class="link">
@@ -217,7 +240,7 @@
 									<div class="desc">
 										<span class="meta"><i class="fa fa-calendar"></i> 2020.07 ~ 2021.05</span>
 										<h2>
-											<a href="#">한국주택금융공사</a>
+											<a>한국주택금융공사</a>
 										</h2>
 										<p>
 											Web Server : WebtoB<br>
@@ -231,7 +254,7 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="#" class="blog-img"> 
+									<a href="javascript: getPjtDetail('korail');" class="blog-img"> 
 										<img class="img-responsive" src="./images/pjt_korail.png">
 										<div class="overlay"></div>
 										<div class="link">
@@ -241,7 +264,7 @@
 									<div class="desc">
 										<span class="meta"><i class="fa fa-calendar"></i> 2019.08 ~ 2020.07</span>
 										<h2>
-											<a href="#">철도공사</a>
+											<a>철도공사</a>
 										</h2>
 										<p>
 											Web Server : iPLANET / Apache<br>
@@ -255,7 +278,7 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="#" class="blog-img"> 
+									<a href="javascript: getPjtDetail('nps');" class="blog-img"> 
 										<img class="img-responsive" src="./images/pjt_nps.png">
 										<div class="overlay"></div>
 										<div class="link">
@@ -265,7 +288,7 @@
 									<div class="desc">
 										<span class="meta"><i class="fa fa-calendar"></i> 2019.02 ~ 2019.07</span>
 										<h2>
-											<a href="#">국민연금공단</a>
+											<a>국민연금공단</a>
 										</h2>
 										<p>
 											Web Server : WebtoB<br>
@@ -279,7 +302,7 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="#" class="blog-img"> 
+									<a href="javascript: getPjtDetail('nec');" class="blog-img"> 
 										<img class="img-responsive" src="./images/pjt_nec.png">
 										<div class="overlay"></div>
 										<div class="link">
@@ -289,7 +312,7 @@
 									<div class="desc">
 										<span class="meta"><i class="fa fa-calendar"></i> 2018.12 ~ 2019.01</span>
 										<h2>
-											<a href="#">중앙선거관리위원회</a>
+											<a>중앙선거관리위원회</a>
 										</h2>
 										<p>
 											Web Server : WebtoB<br>
@@ -303,7 +326,7 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="#" class="blog-img"> 
+									<a href="javascript: getPjtDetail('ssis');" class="blog-img"> 
 										<img class="img-responsive" src="./images/pjt_ssis.png">
 										<div class="overlay"></div>
 										<div class="link">
@@ -313,7 +336,7 @@
 									<div class="desc">
 										<span class="meta"><i class="fa fa-calendar"></i> 2018.07 ~ 2018.12</span>
 										<h2>
-											<a href="#">사회보장정보원</a>
+											<a>사회보장정보원</a>
 										</h2>
 										<p>
 											Web Server : WebtoB<br>
@@ -327,7 +350,7 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="#" class="blog-img"> 
+									<a href="javascript: getPjtDetail('handy');" class="blog-img"> 
 										<img class="img-responsive" src="./images/pjt_handy.png">
 										<div class="overlay"></div>
 										<div class="link">
@@ -337,10 +360,12 @@
 									<div class="desc">
 										<span class="meta"><i class="fa fa-calendar"></i> 2017.07 ~ 2019.01</span>
 										<h2>
-											<a href="#">핸디소프트</a>
+											<a>핸디소프트</a>
 										</h2>
 										<p>
-											Groupware maintenance
+											Web Server : -<br>
+											WAS : -<br>
+											USER : -
 										</p>
 									</div>
 								</div>
@@ -348,6 +373,9 @@
 						</div>
 					</div>
 				</div>
+				<h3 id="pjtName" class="dn"></h3>
+				<pre id="pjtDetail" class="dn">
+				</pre>
 			</div>
 		</div>
 
