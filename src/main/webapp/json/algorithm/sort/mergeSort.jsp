@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<h3>Merge Sort</h3>
 <pre>
+[Merge Sort]
+
 구현 중입니다.
 </pre>
 <%

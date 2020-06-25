@@ -39,8 +39,6 @@
 		    },
 		    success: function(data){
 		    	var obj = JSON.parse(data);
-		    	$('#pjtName').html(obj.pjtName + ' (상세)');
-		    	$('#pjtName').show();
 		    	$('#pjtDetail').html(obj.pjtDetail);
 		    	$('#pjtDetail').show();
 		    },		    
@@ -373,7 +371,6 @@
 						</div>
 					</div>
 				</div>
-				<h3 id="pjtName" class="dn"></h3>
 				<pre id="pjtDetail" class="dn">
 				</pre>
 			</div>

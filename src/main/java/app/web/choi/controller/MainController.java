@@ -26,35 +26,35 @@ public class MainController {
 		StringBuffer sb = new StringBuffer(300);
 		
 		if ("hf".equals(pjtName)) {
-			pjtName = "한국주택금융공사";
+			sb.append("[한국주택금융공사]\n\n");
 			sb.append("투입 전입니다.");
 		} else if ("korail".equals(pjtName)) {
-			pjtName = "철도공사";
+			sb.append("[철도공사]\n\n");
 			sb.append("- 포털 사용자 화면 및 관리자 화면 개발\n");
 			sb.append("- 로그인, 메인화면, 게시판 퍼블리싱 적용\n");
 			sb.append("- 노후화된 서버로 인한 속도 개선 작업\n");
 			sb.append("- 60여개의 업무 시스템 연동\n");
 			sb.append("- SSO 연동\n");
 		} else if ("nps".equals(pjtName)) {
-			pjtName = "국민연금공단";
+			sb.append("[국민연금공단]\n\n");
 			sb.append("- bsh배치를 통한 인사시스템 연동\n");
 			sb.append("- bsh배치를 통한 사용자 권한 부여 및 회수 기능 개발\n");
 			sb.append("- 퀵메뉴 및 즐겨찾기 기능 구현\n");
 			sb.append("- 회의실예약 기능 개선\n");
 			sb.append("- 결재 기능 개선\n");
 		} else if ("nec".equals(pjtName)) {
-			pjtName = "중앙선거관리위원회";
+			sb.append("[중앙선거관리위원회]\n\n");
 			sb.append("- 통합검색 기능 구현을 위한 검색 엔진 서버와의 연동\n");
 			sb.append("- 게시판 기능 개선\n");
 			sb.append("- 알림 기능 개선\n");
 		} else if ("ssis".equals(pjtName)) {
-			pjtName = "사회보장정보원";
+			sb.append("[사회보장정보원]");
 			sb.append("- 게시판 기능 개선\n");
 			sb.append("- 업무시스템 기능 개선\n");
 			sb.append("- 회의실예약 기능 개선\n");
 			sb.append("- 주-월간보고 웹 에디터 변경\n");
 		} else if ("handy".equals(pjtName)) {
-			pjtName = "핸디소프트";
+			sb.append("[핸디소프트]\n\n");
 			sb.append("- 자사 ADD-ON 제품 개발(문서변환 솔루션)\n");
 			sb.append("- 클라우드 그룹웨어 퍼블리싱 적용\n");
 			sb.append("- 버그패치 및 분기별 버그 수정 모듈 Release\n");
@@ -62,7 +62,6 @@ public class MainController {
 		}
 		
 		ModelAndView mav = new ModelAndView("jsonView");
-		mav.addObject("pjtName", pjtName);
 		mav.addObject("pjtDetail", sb.toString());
         return mav;
     }

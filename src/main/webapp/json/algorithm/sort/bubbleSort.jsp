@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<h3>Bubble Sort</h3>
 <pre>
+[Bubble Sort]
+
+
 int[] data = { 4, 54, 2, 8, 63, 7, 55, 56 };
 int[] orgData = data.clone();
 int temp;
