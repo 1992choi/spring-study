@@ -24,13 +24,16 @@
 								</ul>
 							</li>
 							<li>
+								<a href="javascript: openSubMenu('api');">API</a>
+								<ul id="sub_api" class="sub_menu dn">
+									<li><a href="/choi/navi.do">Navi</a></li>
+								</ul>
+							</li>
+							<li>
 								<a href="javascript: openSubMenu('etc');">ETC</a>
 								<ul id="sub_etc" class="sub_menu dn">
 									<li><a href="/choi/imgResize.do">Image Resize</a></li>
 								</ul>
-							</li>
-							<li>
-								<a href="/choi/navi.do">Navi</a>
 							</li>
 							<li>
 								<a href="/choi/contact.do">Contact</a>
