@@ -15,20 +15,22 @@ public class Interceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
 
-        logger.info("Interceptor preHandle");
+        logger.info("Interceptor preHandle : " + request.getRequestURI());
+
+
         return true;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
 
-        logger.info("Interceptor postHandle");
+        logger.info("Interceptor postHandle : " + request.getRequestURI());
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
 
-        logger.info("Interceptor afterCompletion");
+        logger.info("Interceptor afterCompletion : " + request.getRequestURI());
     }
 
 }
