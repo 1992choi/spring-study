@@ -62,6 +62,26 @@
 	padding-bottom: 500px !important;
 }
 
+.cst_min_height_100 {
+    min-height: 100px !important;
+}
+
+.cst_min_height_200 {
+    min-height: 200px !important;
+}
+
+.cst_min_height_300 {
+    min-height: 300px !important;
+}
+
+.cst_min_height_400 {
+    min-height: 400px !important;
+}
+
+.cst_min_height_500 {
+    min-height: 500px !important;
+}
+
 .dn {
 	display: none;
 }

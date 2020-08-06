@@ -4,20 +4,28 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class EtcController {
 
 	private static final Logger logger = LoggerFactory.getLogger(EtcController.class);
+
+	@Value("${upload.path}")
+	private String uploadPath;
 	
 	@RequestMapping(value = "/imgResize.do", method = RequestMethod.GET)
 	public ModelAndView imgResize() {
@@ -101,6 +109,41 @@ public class EtcController {
 	
 
 		ModelAndView mav = new ModelAndView("etc/imgResize");
+		return mav;
+
+	}
+
+	@RequestMapping(value = "/fileUpload.do", method = RequestMethod.GET)
+	public ModelAndView fileUpload() {
+
+		ModelAndView mav = new ModelAndView("etc/fileUpload");
+		return mav;
+
+	}
+
+	@RequestMapping(value = "/fileUploadJson.do", method = RequestMethod.POST)
+	public ModelAndView fileUploadJson(MultipartHttpServletRequest request) {
+
+		List<MultipartFile> fileList = request.getFiles("file");
+
+		File fileDir = new File(uploadPath);
+		if (!fileDir.exists()) {
+			fileDir.mkdirs();
+		}
+
+		String imgSrc = "";
+		for (MultipartFile mf : fileList) {
+			String originFileName = mf.getOriginalFilename();
+			try {
+				mf.transferTo(new File(uploadPath, originFileName));
+				imgSrc = "upload/" + originFileName;
+			} catch (Exception e) {
+				logger.debug("Img Upload Fail : " + e.toString());
+			}
+		}
+
+		ModelAndView mav = new ModelAndView("jsonView");
+		mav.addObject("imgSrc", imgSrc);
 		return mav;
 
 	}

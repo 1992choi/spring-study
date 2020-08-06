@@ -33,6 +33,7 @@
 								<a href="javascript: openSubMenu('etc');">ETC</a>
 								<ul id="sub_etc" class="sub_menu dn">
 									<li><a href="/choi/imgResize.do">Image Resize</a></li>
+									<li><a href="/choi/fileUpload.do">File Upload</a></li>
 								</ul>
 							</li>
 							<li>

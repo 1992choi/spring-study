@@ -41,6 +41,9 @@
         <beans:property name="fileEncoding" value="UTF-8" />
     </beans:bean>
 
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</beans:bean>
+
 	<beans:bean id="interceptor" class="app.web.choi.common.Interceptor" />
 	<interceptors>
 		<interceptor>
