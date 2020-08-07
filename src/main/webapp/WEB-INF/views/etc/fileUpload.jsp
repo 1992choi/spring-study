@@ -41,11 +41,11 @@
             contentType: false,
             cache: false,
             success: function(data){
-                if (data.imgSrc == '') {
+                if (data.fileName == '') {
                     alert('업로드를 실패했습니다. 다시 시도해주세요.');
                     $('#imgDiv').empty();
                 } else {
-                    $('#imgDiv').html('<img src="./images/' + data.imgSrc + '" style="width: 100%;">');
+                    $('#imgDiv').html('<img src="./images/upload/' + data.fileName + '" onclick="javascript: download(\'' + data.fileName + '\');" class="cst_width_100per cst_cursor_point">');
                 }
             },
             error: function (request, status, error){
@@ -53,6 +53,10 @@
                 $('#imgDiv').empty();
             }
         });
+    }
+
+    function download(fileName) {
+        location.href = '/choi/fileDownload.do?fileName=' + fileName;
     }
 </script>
 </head>

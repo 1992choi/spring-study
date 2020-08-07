@@ -3,11 +3,14 @@ package app.web.choi.controller;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.File;
+import java.io.*;
+import java.net.URLEncoder;
 import java.util.Iterator;
 import java.util.List;
 
 import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +18,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
@@ -131,20 +135,55 @@ public class EtcController {
 			fileDir.mkdirs();
 		}
 
-		String imgSrc = "";
+		String fileName = "";
 		for (MultipartFile mf : fileList) {
 			String originFileName = mf.getOriginalFilename();
 			try {
 				mf.transferTo(new File(uploadPath, originFileName));
-				imgSrc = "upload/" + originFileName;
+				fileName = originFileName;
 			} catch (Exception e) {
 				logger.debug("Img Upload Fail : " + e.toString());
 			}
 		}
 
 		ModelAndView mav = new ModelAndView("jsonView");
-		mav.addObject("imgSrc", imgSrc);
+		mav.addObject("fileName", fileName);
 		return mav;
+
+	}
+
+	@RequestMapping(value = "/fileDownload.do")
+	public void fileDownload(HttpServletRequest request, HttpServletResponse response,
+			@RequestParam("fileName") String fileName) {
+
+		String filePath = uploadPath + "/" + fileName;
+
+		File file = new File(filePath);
+		if (!file.exists()) {
+			return;
+		}
+
+		response.setContentType("application/octer-stream");
+		response.setHeader("Content-Transfer-Encoding", "binary;");
+		response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+
+		try {
+			OutputStream os = response.getOutputStream();
+			FileInputStream fis = new FileInputStream(filePath);
+
+			int ncount = 0;
+			byte[] bytes = new byte[512];
+
+			while ((ncount = fis.read(bytes)) != -1 ) {
+				os.write(bytes, 0, ncount);
+			}
+			fis.close();
+			os.close();
+		} catch (FileNotFoundException ex) {
+			logger.debug("fileDownload() FileNotFoundException");
+		} catch (IOException ex) {
+			logger.debug("fileDownload() IOException");
+		}
 
 	}
 }

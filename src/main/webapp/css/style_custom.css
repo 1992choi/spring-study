@@ -82,6 +82,14 @@
     min-height: 500px !important;
 }
 
+.cst_width_100per {
+    width: 100% !important;
+}
+
+.cst_cursor_point {
+    cursor: pointer !important;
+}
+
 .dn {
 	display: none;
 }
