@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 public class CronTask {
 	private static final Logger logger = LoggerFactory.getLogger(CronTask.class);
     
-    @Scheduled(cron="* * * * * *")
+    @Scheduled(cron="0 0 * * * *")
     public void scheduleRun() {
     	logger.info("###Scheduler Run");
     }
