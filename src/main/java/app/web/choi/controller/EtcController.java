@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,11 +24,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Controller
 public class EtcController {
 
 	private static final Logger logger = LoggerFactory.getLogger(EtcController.class);
+
+	@Autowired
+	private SessionLocaleResolver localeResolver;
+
+	@Autowired
+	private MessageSource messageSource;
 
 	@Value("${upload.path}")
 	private String uploadPath;
@@ -185,5 +194,11 @@ public class EtcController {
 			logger.debug("fileDownload() IOException");
 		}
 
+	}
+
+	@RequestMapping(value = "/multilingue.do", method = RequestMethod.GET)
+	public ModelAndView multilingue() {
+		ModelAndView mav = new ModelAndView("etc/multilingue");
+		return mav;
 	}
 }

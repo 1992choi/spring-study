@@ -82,8 +82,44 @@
     min-height: 500px !important;
 }
 
+.cst_width_50 {
+    width: 50px !important;
+}
+
+.cst_width_100 {
+    width: 100px !important;
+}
+
+.cst_width_150 {
+    width: 150px !important;
+}
+
+.cst_width_200 {
+    width: 200px !important;
+}
+
 .cst_width_100per {
     width: 100% !important;
+}
+
+.cst_height_30 {
+    height: 30px !important;
+}
+
+.cst_height_50 {
+    height: 50px !important;
+}
+
+.cst_height_100 {
+    height: 100px !important;
+}
+
+.cst_height_150 {
+    height: 150px !important;
+}
+
+.cst_height_200 {
+    height: 200px !important;
 }
 
 .cst_cursor_point {
