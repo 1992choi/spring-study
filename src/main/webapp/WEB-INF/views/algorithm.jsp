@@ -28,22 +28,9 @@
 <!-- Modernizr JS -->
 <script src="./js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript">
-	function showCode(sort) {
-		alert('구현 중입니다.');
-		/*
-		$.ajax({
-		    url: '/choi/json/algorithm/sort/' + sort + 'Sort.jsp',
-		    type: 'POST',
-		    cache: false,
-		    dataType: 'html',
-		    success: function(data){
-		    	$('#codeDiv').html(data);
-		    },		    
-		    error: function (request, status, error){        
-		    	alert('구현 중입니다.');
-		    }
-		});
-		*/
+	function showCode(page) {
+		var gitUrl = 'https://github.com/19920731/algorithm/tree/master/src/';
+		window.open(gitUrl + page, 'algorithm');
 	}
 </script>
 </head>
@@ -94,7 +81,11 @@
 											<a href="javascript: showCode('array');">배열</a>
 										</h2>
 										<ul>
-											<li>목록 1</li>
+											<li>
+												<a href="javascript: showCode('array/MaxOfArray.java');">
+													최댓값 구하기
+												</a>
+											</li>
 											<li>목록 2</li>
 											<li>목록 3</li>
 										</ul>
