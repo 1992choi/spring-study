@@ -29,6 +29,8 @@
 <script src="./js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript">
 	function showCode(sort) {
+		alert('구현 중입니다.');
+		/*
 		$.ajax({
 		    url: '/choi/json/algorithm/sort/' + sort + 'Sort.jsp',
 		    type: 'POST',
@@ -40,12 +42,13 @@
 		    error: function (request, status, error){        
 		    	alert('구현 중입니다.');
 		    }
-		});		
+		});
+		*/
 	}
 </script>
 </head>
 <body>
-	<jsp:include page="../menu.jsp" />
+	<jsp:include page="./menu.jsp" />
 
 	<div id="colorlib-page">
 		<header>
@@ -74,7 +77,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="rotate">
-							<h2 class="heading">Sort</h2>
+							<h2 class="heading">Algorithm</h2>
 						</div>
 					</div>
 				</div>
@@ -88,11 +91,13 @@
 									</a>
 									<div class="desc">
 										<h2>
-											<a href="javascript: showCode('bubble');">Bubble Sort</a>
+											<a href="javascript: showCode('array');">배열</a>
 										</h2>
-										<p>
-											인접한 두 개의 원소를 비교하여 자리를 교환하는 방법
-										</p>
+										<ul>
+											<li>목록 1</li>
+											<li>목록 2</li>
+											<li>목록 3</li>
+										</ul>
 									</div>
 								</div>
 							</div>
@@ -105,11 +110,13 @@
 									</a>
 									<div class="desc">
 										<h2>
-											<a href="javascript: showCode('selection');">Selection Sort</a>
+											<a href="javascript: showCode('search');">검색</a>
 										</h2>
-										<p>
-											전체 원소들 중에서 기준 위치에 맞는 원소를 선택하여 자리를 교환하는 방법
-										</p>
+										<ul>
+											<li>목록 1</li>
+											<li>목록 2</li>
+											<li>목록 3</li>
+										</ul>
 									</div>
 								</div>
 							</div>
@@ -122,11 +129,13 @@
 									</a>
 									<div class="desc">
 										<h2>
-											<a href="javascript: showCode('insertion');">Insertion Sort</a>
+											<a href="javascript: showCode('stackAndQueue)');">스택&큐</a>
 										</h2>
-										<p>
-											정렬되어 있는 부분집합에 정렬할 새로운 원소의 위치를 삽입하는 방법
-										</p>
+										<ul>
+											<li>목록 1</li>
+											<li>목록 2</li>
+											<li>목록 3</li>
+										</ul>
 									</div>
 								</div>
 							</div>
@@ -139,11 +148,13 @@
 									</a>
 									<div class="desc">
 										<h2>
-											<a href="javascript: showCode('merge');">Merge Sort</a>
+											<a href="javascript: showCode('recursion');">재귀</a>
 										</h2>
-										<p>
-											2개 이상의 자료를 오름차순이나 내림차순으로 재배열하고 정렬된 자료의 집합을 병합하여 정렬하는 방법
-										</p>
+										<ul>
+											<li>목록 1</li>
+											<li>목록 2</li>
+											<li>목록 3</li>
+										</ul>
 									</div>
 								</div>
 							</div>
@@ -156,11 +167,13 @@
 									</a>
 									<div class="desc">
 										<h2>
-											<a href="javascript: showCode('quick');">Quick Sort</a>
+											<a href="javascript: showCode('sort');">정렬</a>
 										</h2>
-										<p>
-											정렬할 전체 원소에 대해서 정렬을 수행하지 않고, 기준 값을 중심으로 왼쪽 부분 집합과 오른쪽 부분 집합으로 분할하여 정렬하는 방법
-										</p>
+										<ul>
+											<li>목록 1</li>
+											<li>목록 2</li>
+											<li>목록 3</li>
+										</ul>
 									</div>
 								</div>
 							</div>
@@ -173,11 +186,13 @@
 									</a>
 									<div class="desc">
 										<h2>
-											<a href="javascript: showCode('heap');">Heap Sort</a>
+											<a href="javascript: showCode('tree');">트리</a>
 										</h2>
-										<p>
-											최대 힙 트리나 최소 힙 트리를 구성해 정렬을 하는 방법
-										</p>
+										<ul>
+											<li>목록 1</li>
+											<li>목록 2</li>
+											<li>목록 3</li>
+										</ul>
 									</div>
 								</div>
 							</div>
@@ -190,11 +205,13 @@
 									</a>
 									<div class="desc">
 										<h2>
-											<a href="javascript: showCode('shell');">Shell  Sort</a>
+											<a href="javascript: showCode('graph');">그래프</a>
 										</h2>
-										<p>
-											일정한 간격(interval)으로 떨어져 있는 자료들끼리 부분집합을 구성하고 각 부분집합에 있는 원소들에 대해서 삽입 정렬을 수행하는 작업을 반복하면서 전체 원소들을 정렬하는 방법
-										</p>
+										<ul>
+											<li>목록 1</li>
+											<li>목록 2</li>
+											<li>목록 3</li>
+										</ul>
 									</div>
 								</div>
 							</div>
@@ -206,7 +223,7 @@
 			</div>
 		</div>
 
-		<jsp:include page="../footer.jsp" />
+		<jsp:include page="./footer.jsp" />
 
 	</div>
 

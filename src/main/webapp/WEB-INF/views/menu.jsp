@@ -15,13 +15,7 @@
 								<a  class="cst_va_sub" href="/choi/main.do"><i class="icon-home"></i> HOME</a>
 							</li>
 							<li>
-								<a href="javascript: openSubMenu('algorithm');">Algorithm</a>
-								<ul id="sub_algorithm" class="sub_menu dn">
-									<li><a href="/choi/algorithm.do?page=sort">Sort</a></li>
-									<li><a href="#">Algorithm #2</a></li>
-									<li><a href="#">Algorithm #3</a></li>
-									<li><a href="#">Algorithm #4</a></li>
-								</ul>
+								<a href="/choi/algorithm.do">Algorithm</a>
 							</li>
 							<li>
 								<a href="javascript: openSubMenu('api');">API</a>

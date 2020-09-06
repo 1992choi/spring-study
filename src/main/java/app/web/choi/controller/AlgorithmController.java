@@ -10,8 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class AlgorithmController {
 	
 	@RequestMapping(value = "/algorithm.do", method = RequestMethod.GET)
-	public ModelAndView algorithm(@RequestParam("page") String page) {
-		ModelAndView mav = new ModelAndView("algorithm/" + page);
+	public ModelAndView algorithm() {
+		ModelAndView mav = new ModelAndView("algorithm");
 		return mav;
 	}
 	
