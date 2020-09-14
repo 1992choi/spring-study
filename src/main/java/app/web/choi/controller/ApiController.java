@@ -1,22 +1,128 @@
 package app.web.choi.controller;
 
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Random;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+
+import org.apache.commons.codec.binary.Base32;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ApiController {
-	
-	@Value("${kakao.js.key}") 
+
+	@Value("${kakao.js.key}")
 	private String kakaoJsKey;
-	
+
 	@RequestMapping(value = "/navi.do", method = RequestMethod.GET)
 	public ModelAndView navi() {
 		ModelAndView mav = new ModelAndView("api/navi");
 		mav.addObject("kakaoJsKey", kakaoJsKey);
 		return mav;
 	}
-	
+
+	@RequestMapping(value = "/otp.do", method = RequestMethod.GET)
+	public ModelAndView otp() {
+		byte[] buffer = new byte[5 + 5 * 5];
+		new Random().nextBytes(buffer);
+		Base32 codec = new Base32();
+		byte[] secretKey = Arrays.copyOf(buffer, 10);
+		byte[] bEncodedKey = codec.encode(secretKey);
+		String encodedKey = new String(bEncodedKey);
+
+		String userName = "choi";
+		String hostName = "test.com";
+		String url = getQRBarcodeURL(userName, hostName, encodedKey); // Google OTP 앱에 userName@hostName 으로 저장됨 (양식은 상관없음) 
+																	  // key를 입력하거나 생성된 QR코드를 바코드 스캔하여 등록
+
+		ModelAndView mav = new ModelAndView("api/otp");
+		mav.addObject("encodedKey", encodedKey);
+		mav.addObject("url", url);
+		return mav;
+	}
+
+	@RequestMapping(value = "/otpCheck.do", method = RequestMethod.GET)
+	public ModelAndView otpCheck(@RequestParam("otpKey") String otpKey, @RequestParam("encodedKey") String encodedKey) {
+
+		boolean isValid = false;
+		long userCode = Integer.parseInt(otpKey);
+		long l = new Date().getTime();
+		long ll = l / 30000;
+		
+		try {
+			// 키, 코드, 시간으로 일회용 비밀번호가 맞는지 일치 여부 확인.
+			isValid = checkCode(encodedKey, userCode, ll);
+		} catch (InvalidKeyException e) {
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+
+		ModelAndView mav = new ModelAndView("jsonView");
+		mav.addObject("isValid", isValid);
+		return mav;
+	}
+
+	public static String getQRBarcodeURL(String user, String host, String secret) { // QR코드 주소 생성
+		String url = "http://chart.apis.google.com/chart?cht=qr&chs=200x200&chl=otpauth://totp/%s@%s%%3Fsecret%%3D%s&chld=H|0";
+		return String.format(url, user, host, secret);
+	}
+
+	private static boolean checkCode(String secret, long code, long t)
+			throws NoSuchAlgorithmException, InvalidKeyException {
+		Base32 codec = new Base32();
+		byte[] decodedKey = codec.decode(secret);
+
+		// Window is used to check codes generated in the near past.
+		// You can use this value to tune how far you're willing to go.
+		int window = 3;
+		for (int i = -window; i <= window; ++i) {
+			long hash = verifyCode(decodedKey, t + i);
+
+			if (hash == code) {
+				return true;
+			}
+		}
+
+		// The validation code is invalid.
+		return false;
+	}
+
+	private static int verifyCode(byte[] key, long t) throws NoSuchAlgorithmException, InvalidKeyException {
+		byte[] data = new byte[8];
+		long value = t;
+		for (int i = 8; i-- > 0; value >>>= 8) {
+			data[i] = (byte)value;
+		}
+
+		SecretKeySpec signKey = new SecretKeySpec(key, "HmacSHA1");
+		Mac mac = Mac.getInstance("HmacSHA1");
+		mac.init(signKey);
+		byte[] hash = mac.doFinal(data);
+
+		int offset = hash[20 - 1] & 0xF;
+
+		// We're using a long because Java hasn't got unsigned int.
+		long truncatedHash = 0;
+		for (int i = 0; i < 4; ++i) {
+			truncatedHash <<= 8;
+			// We are dealing with signed bytes:
+			// we just keep the first byte.
+			truncatedHash |= (hash[offset + i] & 0xFF);
+		}
+
+		truncatedHash &= 0x7FFFFFFF;
+		truncatedHash %= 1000000;
+
+		return (int)truncatedHash;
+	}
 }

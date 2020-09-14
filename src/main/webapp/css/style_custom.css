@@ -2,6 +2,30 @@
 	text-align: left !important;
 }
 
+.cst_align_center {
+	text-align: center !important;
+}
+
+.cst_align_right {
+	text-align: right !important;
+}
+
+.cst_center {
+	margin: 0 auto;
+}
+
+.cst_mg_top30 {
+	margin-top: 30px !important;
+}
+
+.cst_mg_top60 {
+	margin-top: 60px !important;
+}
+
+.cst_mg_top100 {
+	margin-top: 100px !important;
+}
+
 .cst_va_sub {
 	vertical-align: sub !important;
 }
@@ -128,6 +152,10 @@
 
 .dn {
 	display: none;
+}
+
+.db {
+	display: block;
 }
 
 #colorlib-main-nav .sub_menu li {

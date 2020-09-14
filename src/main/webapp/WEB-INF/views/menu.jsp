@@ -21,6 +21,7 @@
 								<a href="javascript: openSubMenu('api');">API</a>
 								<ul id="sub_api" class="sub_menu dn">
 									<li><a href="/choi/navi.do">Navi</a></li>
+									<li><a href="/choi/otp.do">OTP</a></li>
 								</ul>
 							</li>
 							<li>
