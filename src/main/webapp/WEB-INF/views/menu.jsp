@@ -30,6 +30,7 @@
 									<li><a href="/choi/imgResize.do">Image Resize</a></li>
 									<li><a href="/choi/fileUpload.do">File Upload</a></li>
 									<li><a href="/choi/multilingue.do">i18n</a></li>
+									<li><a href="/choi/chart.do">Chart</a></li>
 								</ul>
 							</li>
 							<li>

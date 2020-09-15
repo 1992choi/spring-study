@@ -201,4 +201,12 @@ public class EtcController {
 		ModelAndView mav = new ModelAndView("etc/multilingue");
 		return mav;
 	}
+	
+	@RequestMapping(value = "/chart.do", method = RequestMethod.GET)
+	public ModelAndView chart() {
+
+		ModelAndView mav = new ModelAndView("etc/chart");
+		return mav;
+
+	}
 }

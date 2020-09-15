@@ -122,6 +122,18 @@
     width: 200px !important;
 }
 
+.cst_width_400 {
+    width: 400px !important;
+}
+
+.cst_width_600 {
+    width: 600px !important;
+}
+
+.cst_width_800 {
+    width: 800px !important;
+}
+
 .cst_width_100per {
     width: 100% !important;
 }
