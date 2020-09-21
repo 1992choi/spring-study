@@ -11,22 +11,37 @@
 <meta name="keywords" content="" />
 <meta name="author" content="" />
 <!-- Animate.css -->
-<link rel="stylesheet" href="./css/animate.css">
+<link rel="stylesheet" href="/choi/css/animate.css">
 <!-- Icomoon Icon Fonts-->
-<link rel="stylesheet" href="./css/icomoon.css">
+<link rel="stylesheet" href="/choi/css/icomoon.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="./css/bootstrap.css">
+<link rel="stylesheet" href="/choi/css/bootstrap.css">
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="./css/owl.carousel.min.css">
-<link rel="stylesheet" href="./css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/choi/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/choi/css/owl.theme.default.min.css">
 <!-- Magnific Popup -->
-<link rel="stylesheet" href="./css/magnific-popup.css">
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/style_custom.css">
+<link rel="stylesheet" href="/choi/css/magnific-popup.css">
+<link rel="stylesheet" href="/choi/css/style.css">
+<link rel="stylesheet" href="/choi/css/style_custom.css">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Modernizr JS -->
-<script src="./js/modernizr-2.6.2.min.js"></script>
+<script src="/choi/js/modernizr-2.6.2.min.js"></script>
+<!-- jQuery -->
+<script src="/choi/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="/choi/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="/choi/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="/choi/js/jquery.waypoints.min.js"></script>
+<!-- Owl Carousel -->
+<script src="/choi/js/owl.carousel.min.js"></script>
+<!-- Magnific Popup -->
+<script src="/choi/js/jquery.magnific-popup.min.js"></script>
+<script src="/choi/js/magnific-popup-options.js"></script>
+<!-- Main JS (Do not remove) -->
+<script src="/choi/js/main.js"></script>
 <script type="text/javascript">
 	function getPjtDetail(pjtName) {
 		$.ajax({
@@ -74,10 +89,10 @@
 					<div class="col-md-5 animate-box">
 						<div class="owl-carousel3">
 							<div class="item">
-								<img class="img-responsive about-img" src="./images/about.jpg">
+								<img class="img-responsive about-img" src="/choi/images/about.jpg">
 							</div>
 							<div class="item">
-								<img class="img-responsive about-img" src="./images/about2.jpg">
+								<img class="img-responsive about-img" src="/choi/images/about2.jpg">
 							</div>
 						</div>
 					</div>
@@ -114,7 +129,7 @@
 									<br>
 									<a class="cst_va_sub" href="javascript: shareKako();"><i class="icon-share-2"></i></a>
 									Share with KakaoTalk
-									<script type="text/javascript" src="./js/kakao.js"></script>
+									<script type="text/javascript" src="/choi/js/kakao.js"></script>
 									<script type="text/javascript">
 										// input your appkey
 										Kakao.init('<c:out value="${kakaoJsKey}"/>');
@@ -199,7 +214,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="one-forth services-img" style="background-image: url(./images/skill.jpg);"></div>
+							<div class="one-forth services-img" style="background-image: url(/choi/images/skill.jpg);"></div>
 						</div>
 					</div>
 				</div>
@@ -229,7 +244,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a href="javascript: getPjtDetail('hf');" class="blog-img"> 
-										<img class="img-responsive" src="./images/pjt_hf.png">
+										<img class="img-responsive" src="/choi/images/pjt_hf.png">
 										<div class="overlay"></div>
 										<div class="link">
 											<span class="read">Read more</span>
@@ -253,7 +268,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a href="javascript: getPjtDetail('korail');" class="blog-img"> 
-										<img class="img-responsive" src="./images/pjt_korail.png">
+										<img class="img-responsive" src="/choi/images/pjt_korail.png">
 										<div class="overlay"></div>
 										<div class="link">
 											<span class="read">Read more</span>
@@ -277,7 +292,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a href="javascript: getPjtDetail('nps');" class="blog-img"> 
-										<img class="img-responsive" src="./images/pjt_nps.png">
+										<img class="img-responsive" src="/choi/images/pjt_nps.png">
 										<div class="overlay"></div>
 										<div class="link">
 											<span class="read">Read more</span>
@@ -301,7 +316,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a href="javascript: getPjtDetail('nec');" class="blog-img"> 
-										<img class="img-responsive" src="./images/pjt_nec.png">
+										<img class="img-responsive" src="/choi/images/pjt_nec.png">
 										<div class="overlay"></div>
 										<div class="link">
 											<span class="read">Read more</span>
@@ -325,7 +340,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a href="javascript: getPjtDetail('ssis');" class="blog-img"> 
-										<img class="img-responsive" src="./images/pjt_ssis.png">
+										<img class="img-responsive" src="/choi/images/pjt_ssis.png">
 										<div class="overlay"></div>
 										<div class="link">
 											<span class="read">Read more</span>
@@ -349,7 +364,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a href="javascript: getPjtDetail('handy');" class="blog-img"> 
-										<img class="img-responsive" src="./images/pjt_handy.png">
+										<img class="img-responsive" src="/choi/images/pjt_handy.png">
 										<div class="overlay"></div>
 										<div class="link">
 											<span class="read">Read more</span>
@@ -379,24 +394,6 @@
 		<jsp:include page="./footer.jsp" />
 
 	</div>
-
-	<!-- jQuery -->
-	<script src="./js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="./js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="./js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="./js/jquery.waypoints.min.js"></script>
-	<!-- Owl Carousel -->
-	<script src="./js/owl.carousel.min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="./js/jquery.magnific-popup.min.js"></script>
-	<script src="./js/magnific-popup-options.js"></script>
-
-	<!-- Main JS (Do not remove) -->
-	<script src="./js/main.js"></script>
-
 </body>
 </html>
 

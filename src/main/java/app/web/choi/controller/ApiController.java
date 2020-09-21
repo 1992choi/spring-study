@@ -23,14 +23,14 @@ public class ApiController {
 	@Value("${kakao.js.key}")
 	private String kakaoJsKey;
 
-	@RequestMapping(value = "/navi.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/api/navi.do", method = RequestMethod.GET)
 	public ModelAndView navi() {
 		ModelAndView mav = new ModelAndView("api/navi");
 		mav.addObject("kakaoJsKey", kakaoJsKey);
 		return mav;
 	}
 
-	@RequestMapping(value = "/otp.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/api/otp.do", method = RequestMethod.GET)
 	public ModelAndView otp() {
 		byte[] buffer = new byte[5 + 5 * 5];
 		new Random().nextBytes(buffer);
@@ -50,7 +50,7 @@ public class ApiController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/otpCheck.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/api/otpCheck.do", method = RequestMethod.GET)
 	public ModelAndView otpCheck(@RequestParam("otpKey") String otpKey, @RequestParam("encodedKey") String encodedKey) {
 
 		boolean isValid = false;

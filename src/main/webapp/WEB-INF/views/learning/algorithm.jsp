@@ -11,22 +11,37 @@
 <meta name="keywords" content="" />
 <meta name="author" content="" />
 <!-- Animate.css -->
-<link rel="stylesheet" href="./css/animate.css">
+<link rel="stylesheet" href="/choi/css/animate.css">
 <!-- Icomoon Icon Fonts-->
-<link rel="stylesheet" href="./css/icomoon.css">
+<link rel="stylesheet" href="/choi/css/icomoon.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="./css/bootstrap.css">
+<link rel="stylesheet" href="/choi/css/bootstrap.css">
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="./css/owl.carousel.min.css">
-<link rel="stylesheet" href="./css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/choi/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/choi/css/owl.theme.default.min.css">
 <!-- Magnific Popup -->
-<link rel="stylesheet" href="./css/magnific-popup.css">
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/style_custom.css">
+<link rel="stylesheet" href="/choi/css/magnific-popup.css">
+<link rel="stylesheet" href="/choi/css/style.css">
+<link rel="stylesheet" href="/choi/css/style_custom.css">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Modernizr JS -->
-<script src="./js/modernizr-2.6.2.min.js"></script>
+<script src="/choi/js/modernizr-2.6.2.min.js"></script>
+<!-- jQuery -->
+<script src="/choi/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="/choi/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="/choi/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="/choi/js/jquery.waypoints.min.js"></script>
+<!-- Owl Carousel -->
+<script src="/choi/js/owl.carousel.min.js"></script>
+<!-- Magnific Popup -->
+<script src="/choi/js/jquery.magnific-popup.min.js"></script>
+<script src="/choi/js/magnific-popup-options.js"></script>
+<!-- Main JS (Do not remove) -->
+<script src="/choi/js/main.js"></script>
 <script type="text/javascript">
 	function showCode(page) {
 		var gitUrl = 'https://github.com/19920731/algorithm/tree/master/src/';
@@ -35,7 +50,7 @@
 </script>
 </head>
 <body>
-	<jsp:include page="./menu.jsp" />
+	<jsp:include page="../menu.jsp" />
 
 	<div id="colorlib-page">
 		<header>
@@ -74,7 +89,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a class="blog-img"> 
-										<img class="img-responsive" src="./images/algorithm.png">
+										<img class="img-responsive" src="/choi/images/algorithm.png">
 									</a>
 									<div class="desc">
 										<h2>
@@ -97,7 +112,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a class="blog-img"> 
-										<img class="img-responsive" src="./images/algorithm.png">
+										<img class="img-responsive" src="/choi/images/algorithm.png">
 									</a>
 									<div class="desc">
 										<h2>
@@ -116,11 +131,11 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a class="blog-img"> 
-										<img class="img-responsive" src="./images/algorithm.png">
+										<img class="img-responsive" src="/choi/images/algorithm.png">
 									</a>
 									<div class="desc">
 										<h2>
-											<a href="javascript: showCode('stackAndQueue)');">스택&큐</a>
+											<a href="javascript: showCode('stackAndQueue');">스택&큐</a>
 										</h2>
 										<ul>
 											<li>목록 1</li>
@@ -135,7 +150,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a class="blog-img"> 
-										<img class="img-responsive" src="./images/algorithm.png">
+										<img class="img-responsive" src="/choi/images/algorithm.png">
 									</a>
 									<div class="desc">
 										<h2>
@@ -154,7 +169,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a class="blog-img"> 
-										<img class="img-responsive" src="./images/algorithm.png">
+										<img class="img-responsive" src="/choi/images/algorithm.png">
 									</a>
 									<div class="desc">
 										<h2>
@@ -173,7 +188,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a class="blog-img"> 
-										<img class="img-responsive" src="./images/algorithm.png">
+										<img class="img-responsive" src="/choi/images/algorithm.png">
 									</a>
 									<div class="desc">
 										<h2>
@@ -192,7 +207,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a class="blog-img"> 
-										<img class="img-responsive" src="./images/algorithm.png">
+										<img class="img-responsive" src="/choi/images/algorithm.png">
 									</a>
 									<div class="desc">
 										<h2>
@@ -214,27 +229,9 @@
 			</div>
 		</div>
 
-		<jsp:include page="./footer.jsp" />
+		<jsp:include page="../footer.jsp" />
 
 	</div>
-
-	<!-- jQuery -->
-	<script src="./js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="./js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="./js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="./js/jquery.waypoints.min.js"></script>
-	<!-- Owl Carousel -->
-	<script src="./js/owl.carousel.min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="./js/jquery.magnific-popup.min.js"></script>
-	<script src="./js/magnific-popup-options.js"></script>
-
-	<!-- Main JS (Do not remove) -->
-	<script src="./js/main.js"></script>
-
 </body>
 </html>
 

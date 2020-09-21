@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class AlgorithmController {
+public class LearningController {
 	
-	@RequestMapping(value = "/algorithm.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/learning/algorithm.do", method = RequestMethod.GET)
 	public ModelAndView algorithm() {
-		ModelAndView mav = new ModelAndView("algorithm");
+		ModelAndView mav = new ModelAndView("learning/algorithm");
 		return mav;
 	}
 	

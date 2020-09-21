@@ -15,22 +15,25 @@
 								<a  class="cst_va_sub" href="/choi/main.do"><i class="icon-home"></i> HOME</a>
 							</li>
 							<li>
-								<a href="/choi/algorithm.do">Algorithm</a>
+								<a href="javascript: openSubMenu('learning');">Learning</a>
+								<ul id="sub_learning" class="sub_menu dn">
+									<li><a href="/choi/learning/algorithm.do">Algorithm</a></li>
+								</ul>
 							</li>
 							<li>
 								<a href="javascript: openSubMenu('api');">API</a>
 								<ul id="sub_api" class="sub_menu dn">
-									<li><a href="/choi/navi.do">Navi</a></li>
-									<li><a href="/choi/otp.do">OTP</a></li>
+									<li><a href="/choi/api/navi.do">Navi</a></li>
+									<li><a href="/choi/api/otp.do">OTP</a></li>
 								</ul>
 							</li>
 							<li>
 								<a href="javascript: openSubMenu('etc');">ETC</a>
 								<ul id="sub_etc" class="sub_menu dn">
-									<li><a href="/choi/imgResize.do">Image Resize</a></li>
-									<li><a href="/choi/fileUpload.do">File Upload</a></li>
-									<li><a href="/choi/multilingue.do">i18n</a></li>
-									<li><a href="/choi/chart.do">Chart</a></li>
+									<li><a href="/choi/etc/imgResize.do">Image Resize</a></li>
+									<li><a href="/choi/etc/fileUpload.do">File Upload</a></li>
+									<li><a href="/choi/etc/multilingue.do">i18n</a></li>
+									<li><a href="/choi/etc/chart.do">Chart</a></li>
 								</ul>
 							</li>
 							<li>
@@ -41,16 +44,16 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<a href="./images/menu_img1.jpg" class="gallery image-popup-link text-center" style="background-image: url(./images/menu_img1.jpg);"> 
+						<a href="/choi/images/menu_img1.jpg" class="gallery image-popup-link text-center" style="background-image: url(/choi/images/menu_img1.jpg);"> 
 							<span><i class="icon-search3"></i></span>
 						</a> 
-						<a href="./images/menu_img2.jpg" class="gallery image-popup-link text-center" style="background-image: url(./images/menu_img2.jpg);">
+						<a href="/choi/images/menu_img2.jpg" class="gallery image-popup-link text-center" style="background-image: url(/choi/images/menu_img2.jpg);">
 							<span><i class="icon-search3"></i></span>
 						</a> 
-						<a href="./images/menu_img3.jpg" class="gallery image-popup-link text-center" style="background-image: url(./images/menu_img3.jpg);">
+						<a href="/choi/images/menu_img3.jpg" class="gallery image-popup-link text-center" style="background-image: url(/choi/images/menu_img3.jpg);">
 							<span><i class="icon-search3"></i></span>
 						</a>
-						<a href="./images/menu_img4.jpg" class="gallery image-popup-link text-center" style="background-image: url(./images/menu_img4.jpg);">
+						<a href="/choi/images/menu_img4.jpg" class="gallery image-popup-link text-center" style="background-image: url(/choi/images/menu_img4.jpg);">
 							<span><i class="icon-search3"></i></span>
 						</a>
 					</div>

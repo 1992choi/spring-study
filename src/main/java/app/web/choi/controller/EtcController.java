@@ -4,8 +4,6 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.net.URLEncoder;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -14,9 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,23 +20,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Controller
 public class EtcController {
 
 	private static final Logger logger = LoggerFactory.getLogger(EtcController.class);
 
-	@Autowired
-	private SessionLocaleResolver localeResolver;
-
-	@Autowired
-	private MessageSource messageSource;
-
 	@Value("${upload.path}")
 	private String uploadPath;
 	
-	@RequestMapping(value = "/imgResize.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/etc/imgResize.do", method = RequestMethod.GET)
 	public ModelAndView imgResize() {
 
 		String mainPosition = "W"; // W:너비중심, H:높이중심, X:설정한 수치로(비율무시)
@@ -126,7 +115,7 @@ public class EtcController {
 
 	}
 
-	@RequestMapping(value = "/fileUpload.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/etc/fileUpload.do", method = RequestMethod.GET)
 	public ModelAndView fileUpload() {
 
 		ModelAndView mav = new ModelAndView("etc/fileUpload");
@@ -134,7 +123,7 @@ public class EtcController {
 
 	}
 
-	@RequestMapping(value = "/fileUploadJson.do", method = RequestMethod.POST)
+	@RequestMapping(value = "/etc/fileUploadJson.do", method = RequestMethod.POST)
 	public ModelAndView fileUploadJson(MultipartHttpServletRequest request) {
 
 		List<MultipartFile> fileList = request.getFiles("file");
@@ -161,7 +150,7 @@ public class EtcController {
 
 	}
 
-	@RequestMapping(value = "/fileDownload.do")
+	@RequestMapping(value = "/etc/fileDownload.do")
 	public void fileDownload(HttpServletRequest request, HttpServletResponse response,
 			@RequestParam("fileName") String fileName) {
 
@@ -196,13 +185,13 @@ public class EtcController {
 
 	}
 
-	@RequestMapping(value = "/multilingue.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/etc/multilingue.do", method = RequestMethod.GET)
 	public ModelAndView multilingue() {
 		ModelAndView mav = new ModelAndView("etc/multilingue");
 		return mav;
 	}
 	
-	@RequestMapping(value = "/chart.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/etc/chart.do", method = RequestMethod.GET)
 	public ModelAndView chart() {
 
 		ModelAndView mav = new ModelAndView("etc/chart");
