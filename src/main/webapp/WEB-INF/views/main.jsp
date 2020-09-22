@@ -5,47 +5,32 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Choi's WEB</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<meta name="author" content="" />
-<!-- Animate.css -->
-<link rel="stylesheet" href="/choi/css/animate.css">
-<!-- Icomoon Icon Fonts-->
-<link rel="stylesheet" href="/choi/css/icomoon.css">
-<!-- Bootstrap  -->
-<link rel="stylesheet" href="/choi/css/bootstrap.css">
-<!-- Owl Carousel -->
-<link rel="stylesheet" href="/choi/css/owl.carousel.min.css">
-<link rel="stylesheet" href="/choi/css/owl.theme.default.min.css">
-<!-- Magnific Popup -->
-<link rel="stylesheet" href="/choi/css/magnific-popup.css">
-<link rel="stylesheet" href="/choi/css/style.css">
-<link rel="stylesheet" href="/choi/css/style_custom.css">
-<!-- Font Awesome -->
+<title>Choi's WEB</title>
+<!-- CSS -->
+<link rel="stylesheet" href="<c:url value="/css/animate.css" />">
+<link rel="stylesheet" href="<c:url value="/css/icomoon.css" />">
+<link rel="stylesheet" href="<c:url value="/css/bootstrap.css" />">
+<link rel="stylesheet" href="<c:url value="/css/owl.carousel.min.css" />">
+<link rel="stylesheet" href="<c:url value="/css/owl.theme.default.min.css" />">
+<link rel="stylesheet" href="<c:url value="/css/magnific-popup.css" />">
+<link rel="stylesheet" href="<c:url value="/css/style.css" />">
+<link rel="stylesheet" href="<c:url value="/css/style_custom.css" />">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Modernizr JS -->
-<script src="/choi/js/modernizr-2.6.2.min.js"></script>
-<!-- jQuery -->
-<script src="/choi/js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="/choi/js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="/choi/js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="/choi/js/jquery.waypoints.min.js"></script>
-<!-- Owl Carousel -->
-<script src="/choi/js/owl.carousel.min.js"></script>
-<!-- Magnific Popup -->
-<script src="/choi/js/jquery.magnific-popup.min.js"></script>
-<script src="/choi/js/magnific-popup-options.js"></script>
-<!-- Main JS (Do not remove) -->
-<script src="/choi/js/main.js"></script>
+<!-- JS -->
+<script type="text/javascript" src="<c:url value="/js/modernizr-2.6.2.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/jquery.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/jquery.easing.1.3.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/bootstrap.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/jquery.waypoints.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/owl.carousel.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/jquery.magnific-popup.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/magnific-popup-options.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/main.js" />"></script>
 <script type="text/javascript">
 	function getPjtDetail(pjtName) {
 		$.ajax({
-		    url: '/choi/main/getPjtDetail.do',
+		    url: '<c:url value="/main/getPjtDetail.do" />',
 		    type: 'POST',
 		    cache: false,
 		    dataType: 'html',
@@ -73,7 +58,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="colorlib-navbar-brand">
-							<a class="colorlib-logo cst_align_left" href="/choi/main.do"><span>CH</span><span>OI</span></a>
+							<a class="colorlib-logo cst_align_left" href="<c:url value="/main.do" />"><span>CH</span><span>OI</span></a>
 						</div>
 						<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 					</div>
@@ -89,10 +74,10 @@
 					<div class="col-md-5 animate-box">
 						<div class="owl-carousel3">
 							<div class="item">
-								<img class="img-responsive about-img" src="/choi/images/about.jpg">
+								<img class="img-responsive about-img" src="<c:url value="/images/about.jpg" />">
 							</div>
 							<div class="item">
-								<img class="img-responsive about-img" src="/choi/images/about2.jpg">
+								<img class="img-responsive about-img" src="<c:url value="/images/about2.jpg" />">
 							</div>
 						</div>
 					</div>
@@ -124,15 +109,15 @@
 									<a class="cst_va_sub" href="javascript: window.open('https://github.com/19920731', '_target');"><i class="icon-github2"></i></a>
 									https://github.com/19920731
 									<br>
-									<a class="cst_va_sub" href="/choi/contact.do"><i class="icon-mail5"></i></a>
+									<a class="cst_va_sub" href="<c:url value="/contact.do" />"><i class="icon-mail5"></i></a>
 									younggeunn@naver.com
 									<br>
 									<a class="cst_va_sub" href="javascript: shareKako();"><i class="icon-share-2"></i></a>
 									Share with KakaoTalk
-									<script type="text/javascript" src="/choi/js/kakao.js"></script>
+									<script type="text/javascript" src="<c:url value="/js/kakao.js" />"></script>
 									<script type="text/javascript">
 										// input your appkey
-										Kakao.init('<c:out value="${kakaoJsKey}"/>');
+										Kakao.init('<c:out value="${kakaoJsKey}" />');
 									
 										function shareKako() {
 											Kakao.Link.sendDefault({
@@ -214,7 +199,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="one-forth services-img" style="background-image: url(/choi/images/skill.jpg);"></div>
+							<div class="one-forth services-img" style="background-image: url('<c:url value="/images/skill.jpg" />');"></div>
 						</div>
 					</div>
 				</div>
@@ -244,7 +229,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a href="javascript: getPjtDetail('hf');" class="blog-img"> 
-										<img class="img-responsive" src="/choi/images/pjt_hf.png">
+										<img class="img-responsive" src="<c:url value="/images/pjt_hf.png" />">
 										<div class="overlay"></div>
 										<div class="link">
 											<span class="read">Read more</span>
@@ -268,7 +253,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a href="javascript: getPjtDetail('korail');" class="blog-img"> 
-										<img class="img-responsive" src="/choi/images/pjt_korail.png">
+										<img class="img-responsive" src="<c:url value="/images/pjt_korail.png" />">
 										<div class="overlay"></div>
 										<div class="link">
 											<span class="read">Read more</span>
@@ -292,7 +277,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a href="javascript: getPjtDetail('nps');" class="blog-img"> 
-										<img class="img-responsive" src="/choi/images/pjt_nps.png">
+										<img class="img-responsive" src="<c:url value="/images/pjt_nps.png " />">
 										<div class="overlay"></div>
 										<div class="link">
 											<span class="read">Read more</span>
@@ -316,7 +301,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a href="javascript: getPjtDetail('nec');" class="blog-img"> 
-										<img class="img-responsive" src="/choi/images/pjt_nec.png">
+										<img class="img-responsive" src="<c:url value="/images/pjt_nec.png" />">
 										<div class="overlay"></div>
 										<div class="link">
 											<span class="read">Read more</span>
@@ -340,7 +325,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a href="javascript: getPjtDetail('ssis');" class="blog-img"> 
-										<img class="img-responsive" src="/choi/images/pjt_ssis.png">
+										<img class="img-responsive" src="<c:url value="/images/pjt_ssis.png" />">
 										<div class="overlay"></div>
 										<div class="link">
 											<span class="read">Read more</span>
@@ -364,7 +349,7 @@
 							<div class="col-md-12">
 								<div class="article">
 									<a href="javascript: getPjtDetail('handy');" class="blog-img"> 
-										<img class="img-responsive" src="/choi/images/pjt_handy.png">
+										<img class="img-responsive" src="<c:url value="/images/pjt_handy.png" />">
 										<div class="overlay"></div>
 										<div class="link">
 											<span class="read">Read more</span>

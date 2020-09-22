@@ -5,50 +5,35 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Choi's WEB</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<meta name="author" content="" />
-<!-- Animate.css -->
-<link rel="stylesheet" href="/choi/css/animate.css">
-<!-- Icomoon Icon Fonts-->
-<link rel="stylesheet" href="/choi/css/icomoon.css">
-<!-- Bootstrap  -->
-<link rel="stylesheet" href="/choi/css/bootstrap.css">
-<!-- Owl Carousel -->
-<link rel="stylesheet" href="/choi/css/owl.carousel.min.css">
-<link rel="stylesheet" href="/choi/css/owl.theme.default.min.css">
-<!-- Magnific Popup -->
-<link rel="stylesheet" href="/choi/css/magnific-popup.css">
-<link rel="stylesheet" href="/choi/css/style.css">
-<link rel="stylesheet" href="/choi/css/style_custom.css">
-<!-- Font Awesome -->
+<title>Choi's WEB</title>
+<!-- CSS -->
+<link rel="stylesheet" href="<c:url value="/css/animate.css" />">
+<link rel="stylesheet" href="<c:url value="/css/icomoon.css" />">
+<link rel="stylesheet" href="<c:url value="/css/bootstrap.css" />">
+<link rel="stylesheet" href="<c:url value="/css/owl.carousel.min.css" />">
+<link rel="stylesheet" href="<c:url value="/css/owl.theme.default.min.css" />">
+<link rel="stylesheet" href="<c:url value="/css/magnific-popup.css" />">
+<link rel="stylesheet" href="<c:url value="/css/style.css" />">
+<link rel="stylesheet" href="<c:url value="/css/style_custom.css" />">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Modernizr JS -->
-<script src="/choi/js/modernizr-2.6.2.min.js"></script>
-<!-- jQuery -->
-<script src="/choi/js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="/choi/js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="/choi/js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="/choi/js/jquery.waypoints.min.js"></script>
-<!-- Owl Carousel -->
-<script src="/choi/js/owl.carousel.min.js"></script>
-<!-- Magnific Popup -->
-<script src="/choi/js/jquery.magnific-popup.min.js"></script>
-<script src="/choi/js/magnific-popup-options.js"></script>
-<!-- Main JS (Do not remove) -->
-<script src="/choi/js/main.js"></script>
+<!-- JS -->
+<script type="text/javascript" src="<c:url value="/js/modernizr-2.6.2.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/jquery.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/jquery.easing.1.3.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/bootstrap.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/jquery.waypoints.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/owl.carousel.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/jquery.magnific-popup.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/magnific-popup-options.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/main.js" />"></script>
 <script type="text/javascript">
 	function keyCheck() {
 		var otpKey = $('#otpKey').val();
 		var encodedKey = $('#encodedKey').val();
 		
 		$.ajax({
-		    url: '/choi/otpCheck.do',
+		    url: '<c:url value="/api/otpCheck.do" />',
 		    type: 'GET',
 		    cache: false,
 		    dataType: 'json',
@@ -79,7 +64,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="colorlib-navbar-brand">
-							<a class="colorlib-logo cst_align_left" href="/choi/main.do"><span>CH</span><span>OI</span></a>
+							<a class="colorlib-logo cst_align_left" href="<c:url value="/main.do" />"><span>CH</span><span>OI</span></a>
 						</div>
 						<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 					</div>
@@ -93,9 +78,9 @@
 					<h2 class="bold">OTP</h2>
 				</div>
 				<div class="row cst_align_center cst_pd_top60 cst_pd_bottom400">
-					<img class="db cst_center" src="<c:out value='${url}'/>">
+					<img class="db cst_center" src="<c:out value="${url}"/>">
 					QR코드 혹은 아래 코드를 입력하세요.
-					<input class="db cst_center cst_mg_top30 cst_width_200" type="text" id="encodedKey" value="<c:out value='${encodedKey}'/>" readonly="readonly">
+					<input class="db cst_center cst_mg_top30 cst_width_200" type="text" id="encodedKey" value="<c:out value="${encodedKey}"/>" readonly="readonly">
 					<hr> 
 					<input class="db cst_center cst_mg_top30 cst_width_200" type="text" id="otpKey" placeholder="OTP CODE">
 					<a class="db cst_pd_top30" href="javascript: keyCheck();">인증하기</a>
