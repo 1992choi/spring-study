@@ -158,6 +158,26 @@
     height: 200px !important;
 }
 
+.cst_font_size_20 {
+    font-size: 20px !important;
+}
+
+.cst_font_size_40 {
+    font-size: 40px !important;
+}
+
+.cst_font_size_60 {
+    font-size: 60px !important;
+}
+
+.cst_font_size_80 {
+    font-size: 80px !important;
+}
+
+.cst_font_size_100 {
+    font-size: 100px !important;
+}
+
 .cst_cursor_point {
     cursor: pointer !important;
 }

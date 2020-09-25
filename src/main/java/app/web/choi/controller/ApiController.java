@@ -1,5 +1,11 @@
 package app.web.choi.controller;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
@@ -10,6 +16,8 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Base32;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +27,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ApiController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(ApiController.class);
 
 	@Value("${kakao.js.key}")
 	private String kakaoJsKey;
+	
+	@Value("${naver.client.id}")
+	private String clientId;
+	
+	@Value("${naver.client.secret}")
+	private String clientSecret;
 
 	@RequestMapping(value = "/api/navi.do", method = RequestMethod.GET)
 	public ModelAndView navi() {
@@ -69,6 +85,47 @@ public class ApiController {
 
 		ModelAndView mav = new ModelAndView("jsonView");
 		mav.addObject("isValid", isValid);
+		return mav;
+	}
+	
+	@RequestMapping(value = "/api/translate.do", method = RequestMethod.GET)
+	public ModelAndView translate() {
+		ModelAndView mav = new ModelAndView("api/translate");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/api/translateJson.do", method = RequestMethod.POST)
+	public ModelAndView translateJson(@RequestParam("sourceText") String sourceText) {
+		
+		StringBuffer response = new StringBuffer();
+         
+		try {
+            String text = URLEncoder.encode(sourceText, "UTF-8");
+            URL url = new URL("https://openapi.naver.com/v1/papago/n2mt");
+            HttpURLConnection con = (HttpURLConnection)url.openConnection();
+            con.setRequestMethod("POST");
+            con.setRequestProperty("X-Naver-Client-Id", clientId);
+            con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
+            
+            String postParams = "source=ko&target=en&text=" + text;
+            con.setDoOutput(true);
+            DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+            wr.writeBytes(postParams);
+            wr.flush();
+            wr.close();
+            
+            BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            while ((inputLine = br.readLine()) != null) {
+                response.append(inputLine);
+            }
+            br.close();
+        } catch (Exception e) {
+        	logger.error(e.toString());
+        }
+        
+		ModelAndView mav = new ModelAndView("jsonView");
+		mav.addObject("res", response.toString());
 		return mav;
 	}
 

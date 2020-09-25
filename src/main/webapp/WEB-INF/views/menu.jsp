@@ -26,6 +26,7 @@
 								<ul id="sub_api" class="sub_menu dn">
 									<li><a href="<c:url value="/api/navi.do" />">Navi</a></li>
 									<li><a href="<c:url value="/api/otp.do" />">OTP</a></li>
+									<li><a href="<c:url value="/api/translate.do" />">Translate</a></li>
 								</ul>
 							</li>
 							<li>
