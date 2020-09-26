@@ -74,7 +74,7 @@
 				</div>
 				<div class="row cst_align_center cst_pd_top100 cst_pd_bottom400">
 					<textarea id="sourceText" class="form-control" cols="30" rows="7" placeholder="한국어를 입력하세요."></textarea>
-					<a class="db cst_pd_top30 cst_pd_bottom30 cst_font_size_20" href="javascript: translate();">
+					<a class="db cst_pd_top30 cst_pd_bottom30 cst_font_size_20 text_deco_none" href="javascript: translate();">
 						<i class="icon-send"></i> 번역하기
 					</a>
 					<textarea id="targetText" class="form-control dn" cols="30" rows="7" readonly="readonly">영어</textarea>

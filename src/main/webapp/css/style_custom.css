@@ -190,6 +190,10 @@
 	display: block;
 }
 
+.text_deco_none {
+	text-decoration: none !important;
+}
+
 #colorlib-main-nav .sub_menu li {
 	margin-left: 20px;
 	list-style: circle;	

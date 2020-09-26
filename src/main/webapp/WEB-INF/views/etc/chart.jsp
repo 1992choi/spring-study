@@ -56,7 +56,7 @@
 	
 		var columnOptions = {
 			title : "Programming Language",
-			width : 600,
+			width : 400,
 			height : 400,
 			bar : {
 				groupWidth : "95%"
@@ -82,7 +82,7 @@
 
         var pieOptions = {
         	title : "Programming Language",
-        	width : 600,
+        	width : 400,
 			height : 400,
           	is3D: true,
         };
@@ -118,9 +118,9 @@
 				<div class="row text-center">
 					<h2 class="bold">CHART</h2>
 				</div>
-				<div id="columnChart" class="cst_center cst_width_600 cst_pd_top60"></div>
-				<div id="pieChart" class="cst_center cst_width_600 cst_pd_top60"></div>
-				<div id="barChart" class="cst_center cst_width_600 cst_pd_top60"></div>
+				<div id="columnChart" class="cst_center cst_width_400 cst_pd_top60"></div>
+				<div id="pieChart" class="cst_center cst_width_400 cst_pd_top60"></div>
+				<div id="barChart" class="cst_center cst_width_400 cst_pd_top60"></div>
 			</div>
 		</div>
 

@@ -77,7 +77,7 @@
 				<div class="row text-center">
 					<h2 class="bold">OTP</h2>
 				</div>
-				<div class="row cst_align_center cst_pd_top60 cst_pd_bottom400">
+				<div class="row cst_align_center cst_pd_top100 cst_pd_bottom400">
 					<img class="db cst_center" src="<c:out value="${url}"/>">
 					QR코드 혹은 아래 코드를 입력하세요.
 					<input class="db cst_center cst_mg_top30 cst_width_200" type="text" id="encodedKey" value="<c:out value="${encodedKey}"/>" readonly="readonly">
