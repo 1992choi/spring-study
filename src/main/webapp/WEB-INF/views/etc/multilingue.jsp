@@ -29,6 +29,10 @@
 <script type="text/javascript" src="<c:url value="/js/magnific-popup-options.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/main.js" />"></script>
 <script type="text/javascript">
+	$(document).ready(function() {
+	    $('#langBox').val('<c:out value="${localeLang}"/>');
+	});
+
     function changeLang() {
         location.href = '<c:url value="/etc/multilingue.do" />?lang=' + $('#langBox').val();
     }
@@ -57,10 +61,9 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<div class="item">
+						<div class="item">						
 							<select id="langBox" class="cst_width_100 cst_height_30" onchange="javascript: changeLang();">
-							    <option>언어 선택</option>
-                                <option value="ko">한국어</option>
+							    <option value="ko">한국어</option>
                                 <option value="en">English</option>
                             </select>
 						</div>

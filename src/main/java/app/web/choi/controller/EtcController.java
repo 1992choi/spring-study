@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.List;
+import java.util.Locale;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -186,8 +187,10 @@ public class EtcController {
 	}
 
 	@RequestMapping(value = "/etc/multilingue.do", method = RequestMethod.GET)
-	public ModelAndView multilingue() {
+	public ModelAndView multilingue(Locale locale) {
 		ModelAndView mav = new ModelAndView("etc/multilingue");
+		mav.addObject("localeLang", locale.getLanguage().toLowerCase());
+		
 		return mav;
 	}
 	
