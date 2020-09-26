@@ -22,6 +22,17 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import org.apache.lucene.document.Document;
+import org.apache.lucene.index.DirectoryReader;
+import org.apache.lucene.index.IndexReader;
+import org.apache.lucene.index.Term;
+import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.WildcardQuery;
+import org.apache.lucene.store.Directory;
+import org.apache.lucene.store.FSDirectory;
+
 @Controller
 public class EtcController {
 
@@ -29,6 +40,9 @@ public class EtcController {
 
 	@Value("${upload.path}")
 	private String uploadPath;
+	
+	@Value("${search.engine.index.path}")
+	private String searchEngineIndexDirPath;
 	
 	@RequestMapping(value = "/etc/imgResize.do", method = RequestMethod.GET)
 	public ModelAndView imgResize() {
@@ -200,5 +214,67 @@ public class EtcController {
 		ModelAndView mav = new ModelAndView("etc/chart");
 		return mav;
 
+	}
+	
+	@RequestMapping(value = "/etc/search.do", method = RequestMethod.GET)
+	public ModelAndView search() {
+		ModelAndView mav = new ModelAndView("etc/search");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/etc/searchJson.do", method = RequestMethod.GET)
+	public ModelAndView searchJson(@RequestParam("keyword") String keyword) {
+
+		StringBuffer filename = new StringBuffer(10);
+		Directory dir = null;
+        IndexReader indexReader = null;
+        IndexSearcher indexSearcher = null;
+        TopDocs docs = null;
+        
+        try {
+            
+        	dir = FSDirectory.open(new File(searchEngineIndexDirPath).toPath());
+            indexReader = DirectoryReader.open(dir);
+            indexSearcher = new IndexSearcher(indexReader);
+            
+            // 정확한 어절을 검색하려면 TermQuery 객체 사용.
+            // Query query = new TermQuery(new Term("filename", keyword));
+            
+            // 와일드 카드(? 또는 *) 사용하여 검색하려면 WildcardQuery 객체 사용.
+            Query query = new WildcardQuery(new Term("contents", "*" + keyword + "*"));
+            
+            docs = indexSearcher.search(query, 10);
+            if (docs.scoreDocs != null) {
+                Document doc = null;
+                for (int i = 0; i < docs.totalHits; i++) {
+                    doc = indexSearcher.doc(docs.scoreDocs[i].doc);
+                    filename.append(doc.get("filename") + ";");
+                }
+            }
+            
+        } catch (Exception e) {
+        	logger.error("[EtcController_searchJson] Exception : " + e.toString());
+        } finally {
+            try {
+                if (indexReader != null) {
+                    indexReader.close();
+                }
+            } catch (Exception e) {
+                indexReader = null;
+            }
+            
+            try {
+                if (dir != null) {
+                    dir.close();
+                }
+            } catch (Exception e) {
+                dir = null;
+            }
+        }
+
+		ModelAndView mav = new ModelAndView("jsonView");
+		mav.addObject("hits", docs.totalHits);
+		mav.addObject("filename", filename.toString());
+		return mav;
 	}
 }

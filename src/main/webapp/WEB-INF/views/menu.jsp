@@ -1,3 +1,4 @@
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<script type="text/javascript">	
 		function openSubMenu(subMenu) {
@@ -36,6 +37,7 @@
 									<li><a href="<c:url value="/etc/fileUpload.do" />">File Upload</a></li>
 									<li><a href="<c:url value="/etc/multilingue.do" />">i18n</a></li>
 									<li><a href="<c:url value="/etc/chart.do" />">Chart</a></li>
+									<li><a href="<c:url value="/etc/search.do" />">검색엔진</a></li>
 								</ul>
 							</li>
 							<li>
