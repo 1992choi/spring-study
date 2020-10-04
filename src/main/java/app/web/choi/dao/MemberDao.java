@@ -27,6 +27,11 @@ public class MemberDao {
 	}
 	
 	@Transactional
+	public void updateMember(MemberVO member) throws Exception {
+		sqlSession.update(NAMESPACE + "updateMember", member);
+	}
+	
+	@Transactional
 	public void deleteMember(String memberId) throws Exception {
 		sqlSession.delete(NAMESPACE + "deleteMember", memberId);
 	}

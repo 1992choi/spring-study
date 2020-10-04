@@ -19,6 +19,14 @@
         )
 	</insert>
 	
+	<update id="updateMember" parameterType="memberVO">
+		UPDATE member
+		SET member_name = #{memberName},
+			phone_number = #{phoneNumber},
+			email = #{email}			
+		WHERE member_id = #{memberId};
+	</update>
+	
 	<delete id="deleteMember"> 
         DELETE FROM member WHERE member_id = #{memberId} 
 	</delete>

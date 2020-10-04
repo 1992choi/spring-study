@@ -27,22 +27,37 @@
 <script type="text/javascript" src="<c:url value="/js/jquery.magnific-popup.min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/magnific-popup-options.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/main.js" />"></script>
-<script type="text/javascript">
-	
+<script type="text/javascript">	
 	function addMember() {
-		if ($('#memberName').val() == '' || $('#phoneNumber').val() == '' || $('#email').val() == '') {
+		var addFrm = document.addFrm;
+		if (addFrm.memberName.value == '' || addFrm.phoneNumber.value == '' || addFrm.email.value == '') {
 			alert('모든 항목을 입력하세요.');
 			return;
 		}
-		
-		var frm = document.frm;
-		frm.submit();
+		addFrm.submit();
+	}
+	
+	function modMember() {
+		var modFrm = document.modFrm;
+		if (modFrm.memberName.value == '' || modFrm.phoneNumber.value == '' || modFrm.email.value == '') {
+			alert('모든 항목을 입력하세요.');
+			return;
+		}
+		modFrm.submit();
 	}
 	
 	function deleteMember(memberId) {
 		if (confirm("정말 삭제하시겠습니까?")){
 			location.href = '<c:url value="/learning/deleteMember.do" />?memberId=' + memberId;
-		}		
+		}
+	}
+	
+	function showModifyArea(memberId, memberName, phoneNumber, email) {
+		$('#memberId').val(memberId);
+		$('#memberName').val(memberName);
+		$('#phoneNumber').val(phoneNumber);
+		$('#email').val(email);
+		$('.update').removeClass('dn');		
 	}
 </script>
 </head>
@@ -86,7 +101,12 @@
 							<div class="item">
 								<div class="col-md-12">
 									<div class="article">
-										<a class="text_deco_none" href="javascript: deleteMember('<c:out value="${list.memberId}" />');"><i class="icon-delete2"></i></a>
+										<a class="text_deco_none" href="javascript: showModifyArea('<c:out value="${list.memberId}" />', '<c:out value="${list.memberName}" />', '<c:out value="${list.phoneNumber}" />', '<c:out value="${list.email}" />');">
+											<i class="icon-user-check"></i>
+										</a>
+										<a class="text_deco_none" href="javascript: deleteMember('<c:out value="${list.memberId}" />');">
+											<i class="icon-user-minus"></i>
+										</a>										
 										<a class="blog-img"> 
 											<img class="img-responsive" src="<c:url value="/images/user.jpg" />">
 										</a>
@@ -105,6 +125,37 @@
 						</c:forEach>						
 					</div>
 				</div>
+				<div class="row update dn">
+					<div class="col-md-12">
+						<div class="rotate">
+							<h2 class="heading">UPDATE</h2>
+						</div>
+					</div>
+				</div>
+				<div class="item update dn">
+					<div class="col-md-12">
+						<div class="article">
+							<form name="modFrm" method="post" action="<c:url value="/learning/modMember.do" />">
+								<a class="text_deco_none" href="javascript: modMember();">
+									<i class="icon-user-check"></i>
+								</a>
+								<a class="blog-img cst_width_100per"> 
+									<img class="img-responsive" src="<c:url value="/images/user.jpg" />">
+								</a>
+								<div class="desc">
+									<h2>
+										<input type="hidden" id="memberId" name="memberId">
+										<input type="text" class="cst_width_100per" id="memberName" name="memberName" placeholder="이름">
+									</h2>
+									<ul>
+										<li><input type="text" class="cst_width_100per" id="phoneNumber" name="phoneNumber" placeholder="전화번호"></li>
+										<li><input type="text" class="cst_width_100per" id="email" name="email" placeholder="이메일"></li>
+									</ul>
+								</div>
+							</form>
+						</div>
+					</div>						
+				</div>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="rotate">
@@ -115,18 +166,20 @@
 				<div class="item">
 					<div class="col-md-12">
 						<div class="article">
-							<form id="frm" name="frm" method="post" action="<c:url value="/learning/addMember.do" />">
-								<a class="text_deco_none" href="javascript: addMember();"><i class="icon-user-add"></i></a>
+							<form name="addFrm" method="post" action="<c:url value="/learning/addMember.do" />">
+								<a class="text_deco_none" href="javascript: addMember();">
+									<i class="icon-user-plus"></i>
+								</a>
 								<a class="blog-img cst_width_100per"> 
-											<img class="img-responsive" src="<c:url value="/images/user.jpg" />">
-										</a>
+									<img class="img-responsive" src="<c:url value="/images/user.jpg" />">
+								</a>
 								<div class="desc">
 									<h2>
-										<input type="text" class="cst_width_100per" id="memberName" name="memberName" placeholder="이름">
+										<input type="text" class="cst_width_100per" name="memberName" placeholder="이름">
 									</h2>
 									<ul>
-										<li><input type="text" class="cst_width_100per" id="phoneNumber" name="phoneNumber" placeholder="전화번호"></li>
-										<li><input type="text" class="cst_width_100per" id="email" name="email" placeholder="이메일"></li>
+										<li><input type="text" class="cst_width_100per" name="phoneNumber" placeholder="전화번호"></li>
+										<li><input type="text" class="cst_width_100per" name="email" placeholder="이메일"></li>
 									</ul>
 								</div>
 							</form>

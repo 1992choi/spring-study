@@ -10,6 +10,8 @@ public interface MemberService {
 	
 	void addMember(MemberVO member) throws Exception;
 	
+	void modMember(MemberVO member) throws Exception;
+	
 	void deleteMember(String memberId) throws Exception;
 	
 }
