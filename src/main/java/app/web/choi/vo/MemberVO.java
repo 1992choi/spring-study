@@ -2,10 +2,19 @@ package app.web.choi.vo;
 
 public class MemberVO {
 
+	private String memberId;
 	private String memberName;
 	private String phoneNumber;
 	private String email;
 	
+	public String getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+
 	public String getMemberName() {
 		return memberName;
 	}

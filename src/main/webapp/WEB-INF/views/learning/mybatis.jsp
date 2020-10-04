@@ -29,6 +29,21 @@
 <script type="text/javascript" src="<c:url value="/js/main.js" />"></script>
 <script type="text/javascript">
 	
+	function addMember() {
+		if ($('#memberName').val() == '' || $('#phoneNumber').val() == '' || $('#email').val() == '') {
+			alert('모든 항목을 입력하세요.');
+			return;
+		}
+		
+		var frm = document.frm;
+		frm.submit();
+	}
+	
+	function deleteMember(memberId) {
+		if (confirm("정말 삭제하시겠습니까?")){
+			location.href = '<c:url value="/learning/deleteMember.do" />?memberId=' + memberId;
+		}		
+	}
 </script>
 </head>
 <body>
@@ -51,7 +66,7 @@
 		<div id="colorlib-blog">
 			<div class="container">
 				<div class="row text-center">
-					<h2 class="bold">RESTful</h2>
+					<h2 class="bold">MyBatis</h2>
 				</div>
 				<div class="row">
 					<div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
@@ -61,7 +76,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="rotate">
-							<h2 class="heading">MEMBER</h2>
+							<h2 class="heading">USER</h2>
 						</div>
 					</div>
 				</div>
@@ -71,6 +86,7 @@
 							<div class="item">
 								<div class="col-md-12">
 									<div class="article">
+										<a class="text_deco_none" href="javascript: deleteMember('<c:out value="${list.memberId}" />');"><i class="icon-delete2"></i></a>
 										<a class="blog-img"> 
 											<img class="img-responsive" src="<c:url value="/images/user.jpg" />">
 										</a>
@@ -86,12 +102,40 @@
 									</div>
 								</div>						
 							</div>
-						</c:forEach>
+						</c:forEach>						
 					</div>
-				</div>			
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="rotate">
+							<h2 class="heading">ADD</h2>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-md-12">
+						<div class="article">
+							<form id="frm" name="frm" method="post" action="<c:url value="/learning/addMember.do" />">
+								<a class="text_deco_none" href="javascript: addMember();"><i class="icon-user-add"></i></a>
+								<a class="blog-img cst_width_100per"> 
+											<img class="img-responsive" src="<c:url value="/images/user.jpg" />">
+										</a>
+								<div class="desc">
+									<h2>
+										<input type="text" class="cst_width_100per" id="memberName" name="memberName" placeholder="이름">
+									</h2>
+									<ul>
+										<li><input type="text" class="cst_width_100per" id="phoneNumber" name="phoneNumber" placeholder="전화번호"></li>
+										<li><input type="text" class="cst_width_100per" id="email" name="email" placeholder="이메일"></li>
+									</ul>
+								</div>
+							</form>
+						</div>
+					</div>						
+				</div>
 			</div>
 		</div>
-
+		
 		<jsp:include page="../footer.jsp" />
 
 	</div>

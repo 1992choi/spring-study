@@ -3,9 +3,24 @@
 
 <mapper namespace="mappers.memberMapper">
 	<select id="memberList" resultType="memberVO">
-		SELECT 	member_name AS membername,
+		SELECT 	member_id AS memberid,
+				member_name AS membername,
 				phone_number AS phonenumber,
 				email
 		FROM member
 	</select>
+	
+	<insert id="insertMember" parameterType="memberVO"> 
+        INSERT INTO 
+        	member 
+        VALUES (
+        	(SELECT LPAD(MAX(m.member_id) + 1, 6, 0) FROM member m), 
+        	#{memberName}, #{phoneNumber}, #{email}
+        )
+	</insert>
+	
+	<delete id="deleteMember"> 
+        DELETE FROM member WHERE member_id = #{memberId} 
+	</delete>
+
 </mapper>

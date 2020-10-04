@@ -20,7 +20,7 @@
 								<a href="javascript: openSubMenu('learning');">Learning</a>
 								<ul id="sub_learning" class="sub_menu dn">
 									<li><a href="<c:url value="/learning/algorithm.do" />">Algorithm</a></li>
-									<li><a href="<c:url value="/learning/restful.do" />">RESTful</a></li>
+									<li><a href="<c:url value="/learning/mybatis.do" />">MyBatis</a></li>
 								</ul>
 							</li>
 							<li>
