@@ -74,7 +74,8 @@ public class Indexer {
     //FileFilter를 이용하여 해당 확장자만 걸러낸다.
     public static class TextFilesFilter implements FileFilter {
         public boolean accept(File path) {
-            return path.getName().toLowerCase().endsWith(".txt");
+            return true;
+        	// return path.getName().toLowerCase().endsWith(".txt");
         }
     }
     

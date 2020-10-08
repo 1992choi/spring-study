@@ -45,7 +45,7 @@
                     alert('업로드를 실패했습니다. 다시 시도해주세요.');
                     $('#imgDiv').empty();
                 } else {
-                    $('#imgDiv').html('<img src="<c:url value="/images/upload" />/' + data.fileName + '" onclick="javascript: download(\'' + data.fileName + '\');" class="cst_width_100per cst_cursor_point">');
+                    $('#imgDiv').html('<img src="<c:url value="/upload" />/' + data.fileName + '" onclick="javascript: download(\'' + data.fileName + '\');" class="cst_width_100per cst_cursor_point">');
                 }
             },
             error: function (request, status, error){

@@ -45,18 +45,19 @@ public class EtcController {
 	private String searchEngineIndexDirPath;
 	
 	@RequestMapping(value = "/etc/imgResize.do", method = RequestMethod.GET)
-	public ModelAndView imgResize() {
+	public ModelAndView imgResize(HttpServletRequest request) {
 
+		String appPath = request.getSession().getServletContext().getRealPath("/");
 		String mainPosition = "W"; // W:너비중심, H:높이중심, X:설정한 수치로(비율무시)
 		int resizeImgWidth = 200;
 		int resizeImageHeight = 300;
 		
 		Image image;
-		String originFilePath = "/root/dev/apache-tomcat-8.5.55/webapps/choi/images/about.jpg"; // 원본이미지 경로
+		String originFilePath = appPath + "images/about.jpg"; // 원본이미지 경로
 		int originImgWidth; // 원본이미지 너비
 		int originImgHeight; // 원본이미지 높이
 		double ratio = 1.0; // 축소비율
-		String resizeFilePath = "/root/dev/apache-tomcat-8.5.55/webapps/choi/images/about_resize.jpg"; // 리사이즈된 이미지 경로
+		String resizeFilePath = appPath + "images/about_resize.jpg"; // 리사이즈된 이미지 경로
 		int w = 0; // 리사이즈할 너비
 		int h = 0; // 리사이즈할 높이
 

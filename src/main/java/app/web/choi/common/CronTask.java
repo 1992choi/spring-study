@@ -30,14 +30,20 @@ public class CronTask {
 	    	File[] fileList = folder.listFiles(); //파일리스트 얻어오기
 			
 			for (int i = 0; i < fileList.length; i++) {
-				fileList[i].delete(); //파일 삭제 
-				System.out.println("파일이 삭제되었습니다.");
+				fileList[i].delete(); //파일 삭제				
 			}
+			logger.info(fileList.length + "개의 파일이 삭제되었습니다.");
     	}
 		
     	Indexer indexer = null;
         int indexCnt = 0;        
         try {
+        	
+        	File fileDir = new File(uploadPath);
+    		if (!fileDir.exists()) {
+    			fileDir.mkdirs();
+    		}
+    		
 	        indexer = new Indexer(searchEngineIndexDirPath);
 	        indexCnt = indexer.index(uploadPath, new TextFilesFilter());
 	        logger.info("Indexing SUCCESS! indexCnt : " + indexCnt);
