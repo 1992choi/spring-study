@@ -1,3 +1,7 @@
+#colorlib-page {
+	min-height: 100%;
+}
+
 .cst_align_left {
 	text-align: left !important;
 }
