@@ -21,6 +21,10 @@ public class MemberDao {
 		return sqlSession.selectList(NAMESPACE + "memberList");
 	}
 	
+	public MemberVO selectMember(String memberId) throws Exception {
+		return sqlSession.selectOne(NAMESPACE + "member", memberId);
+	}
+	
 	@Transactional
 	public void insertMember(MemberVO member) throws Exception {
 		sqlSession.insert(NAMESPACE + "insertMember", member);

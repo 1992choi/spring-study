@@ -10,6 +10,15 @@
 		FROM member
 	</select>
 	
+	<select id="member" resultType="memberVO" parameterType="String">
+		SELECT 	member_id AS memberid,
+				member_name AS membername,
+				phone_number AS phonenumber,
+				email
+		FROM member
+		WHERE member_id = #{memberId}
+	</select>
+	
 	<insert id="insertMember" parameterType="memberVO"> 
         INSERT INTO 
         	member 

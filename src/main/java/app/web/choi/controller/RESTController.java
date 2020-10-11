@@ -29,7 +29,9 @@ public class RESTController {
 		try {
 			ArrayList<MemberVO> memberList = (ArrayList<MemberVO>)memberService.getMemberList();
 			mav.addObject("memberList", memberList);
+			mav.addObject("result", "SELECT SUCCESS");
 		} catch (Exception e) {
+			mav.addObject("result", "SELECT FAIL");
 			logger.error("[RESTController] getMembers Exception : " + e.toString());
 		}
 		return mav;
@@ -38,32 +40,54 @@ public class RESTController {
 	@RequestMapping(value = "/member/{id}", method = RequestMethod.GET)
 	public ModelAndView getMember(@PathVariable ("id") String memberId) {
 		ModelAndView mav = new ModelAndView("jsonView");
-		// SELECT ACTION
-		mav.addObject("result", "SELECT SUCCESS");
+		try {
+			MemberVO member = memberService.getMember(memberId);
+			mav.addObject("member", member);
+			mav.addObject("result", "SELECT SUCCESS");
+		} catch (Exception e) {
+			mav.addObject("result", "SELECT FAIL");
+			logger.error("[RESTController] getMember Exception : " + e.toString());
+		}
 		return mav;
 	}
 	
 	@RequestMapping(value = "/member", method = RequestMethod.POST)
 	public ModelAndView addMember(@RequestBody MemberVO member) {
 		ModelAndView mav = new ModelAndView("jsonView");
-		// ADD ACTION
-		mav.addObject("result", "ADD SUCCESS");
+		try {
+			memberService.addMember(member);
+			mav.addObject("result", "ADD SUCCESS");
+		} catch (Exception e) {
+			mav.addObject("result", "ADD FAIL");
+			logger.error("[RESTController] addMember Exception : " + e.toString());
+		}
 		return mav;
 	}
 	
 	@RequestMapping(value = "/member/{id}", method = RequestMethod.PUT)
 	public ModelAndView modMember(@PathVariable ("id") String memberId, @RequestBody MemberVO member) {
 		ModelAndView mav = new ModelAndView("jsonView");
-		// MODIFY ACTION
-		mav.addObject("result", "MODIFY SUCCESS");
+		try {
+			member.setMemberId(memberId);
+			memberService.modMember(member);
+			mav.addObject("result", "MODIFY SUCCESS");
+		} catch (Exception e) {
+			mav.addObject("result", "MODIFY FAIL");
+			logger.error("[RESTController] modMember Exception : " + e.toString());
+		}
 		return mav;
 	}
 	
 	@RequestMapping(value = "/member/{id}", method = RequestMethod.DELETE)
 	public ModelAndView deleteMember(@PathVariable ("id") String memberId) {
 		ModelAndView mav = new ModelAndView("jsonView");
-		// DELETE ACTION
-		mav.addObject("result", "DELETE SUCCESS");
+		try {
+			memberService.deleteMember(memberId);
+			mav.addObject("result", "DELETE SUCCESS");
+		} catch (Exception e) {
+			mav.addObject("result", "DELETE FAIL");
+			logger.error("[RESTController] deleteMember Exception : " + e.toString());
+		}
 		return mav;
 	}
 	

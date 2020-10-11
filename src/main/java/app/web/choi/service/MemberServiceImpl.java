@@ -20,6 +20,11 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
+	public MemberVO getMember(String memberId) throws Exception {
+		return memberDao.selectMember(memberId);
+	}
+	
+	@Override
 	public void addMember(MemberVO member) throws Exception {
 		memberDao.insertMember(member);
 	}
