@@ -29,7 +29,7 @@
 <script type="text/javascript" src="<c:url value="/js/main.js" />"></script>
 <script type="text/javascript">
 	function showCode(page) {
-		var gitUrl = 'https://github.com/19920731/algorithm/tree/master/src/';
+		var gitUrl = 'https://github.com/19920731/Java/tree/master/algorithm/';
 		window.open(gitUrl + page, 'algorithm');
 	}
 </script>
