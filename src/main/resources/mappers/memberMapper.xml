@@ -33,7 +33,7 @@
 		SET member_name = #{memberName},
 			phone_number = #{phoneNumber},
 			email = #{email}			
-		WHERE member_id = #{memberId};
+		WHERE member_id = #{memberId}
 	</update>
 	
 	<delete id="deleteMember"> 
