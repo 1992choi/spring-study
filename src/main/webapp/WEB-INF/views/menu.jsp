@@ -38,7 +38,9 @@
 									<li><a href="<c:url value="/etc/fileUpload.do" />">File Upload</a></li>
 									<li><a href="<c:url value="/etc/multilingue.do" />">i18n</a></li>
 									<li><a href="<c:url value="/etc/chart.do" />">Chart</a></li>
+								<%--
 									<li><a href="<c:url value="/etc/search.do" />">검색엔진</a></li>
+								--%>
 								</ul>
 							</li>
 							<li>

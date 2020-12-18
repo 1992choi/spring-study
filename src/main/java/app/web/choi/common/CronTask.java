@@ -25,6 +25,7 @@ public class CronTask {
     	logger.info("###Scheduler Run");
     	
     	// Indexing
+    	/*
     	File folder = new File(searchEngineIndexDirPath);
     	if (folder.exists()) {
 	    	File[] fileList = folder.listFiles(); //파일리스트 얻어오기
@@ -56,5 +57,6 @@ public class CronTask {
 				indexer = null;
 			}
         }
+        */
     }
 }
