@@ -106,8 +106,8 @@
 									<a class="cst_va_sub"><i class="icon-smartphone"></i></a>
 									+82 10-4884-8084
 									<br>
-									<a class="cst_va_sub" href="javascript: window.open('https://github.com/19920731', '_target');"><i class="icon-github2"></i></a>
-									https://github.com/19920731
+									<a class="cst_va_sub" href="javascript: window.open('https://github.com/Young-Geun', '_target');"><i class="icon-github2"></i></a>
+									https://github.com/Young-Geun
 									<br>
 									<a class="cst_va_sub" href="<c:url value="/contact.do" />"><i class="icon-mail5"></i></a>
 									younggeunn@naver.com
