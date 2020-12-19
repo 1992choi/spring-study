@@ -27,27 +27,6 @@
 <script type="text/javascript" src="<c:url value="/js/jquery.magnific-popup.min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/magnific-popup-options.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/main.js" />"></script>
-<script type="text/javascript">
-	function getPjtDetail(pjtName) {
-		$.ajax({
-		    url: '<c:url value="/main/getPjtDetail.do" />',
-		    type: 'POST',
-		    cache: false,
-		    dataType: 'html',
-		    data: {
-		    	pjtName: pjtName
-		    },
-		    success: function(data){
-		    	var obj = JSON.parse(data);
-		    	$('#pjtDetail').html(obj.pjtDetail);
-		    	$('#pjtDetail').show();
-		    },		    
-		    error: function (request, status, error){        
-		    	console.log('getPjtDetail() Err');
-		    }
-		});		
-	}
-</script>
 </head>
 <body>
 	<jsp:include page="./menu.jsp" />
@@ -165,7 +144,8 @@
 										<div class="services animate-box">
 											<h3>경력사항</h3>
 											<ul>
-												<li>HSForce(핸디 자회사)<br>(2019.06 ~ )</li>
+												<li>핸디코어(핸디 자회사)<br>(2020.10 ~ 2020.12)</li>
+												<li>HSForce(핸디 자회사)<br>(2019.06 ~ 2020.09)</li>
 												<li>핸디소프트<br>(2017.07 ~ 2019.05)</li>
 											</ul>
 										</div>
@@ -182,12 +162,9 @@
 										<div class="services animate-box">
 											<h3>보유기술</h3>
 											<ul>
-												<li>JAVA</li>
-												<li>JSP</li>
-												<li>Spring framework</li>
-												<li>Javascript</li>
-												<li>jQuery</li>
-												<li>MyBatis</li>
+												<li>Front-End<br> HTML5, CSS3, JavaScript, jQuery</li>
+												<li>Back-End<br>Java, Spring Framework</li>
+												<li>Database<br>Oracle, MySQL</li>
 											</ul>
 										</div>
 										<div class="services animate-box">
@@ -228,15 +205,11 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="javascript: getPjtDetail('hf');" class="blog-img"> 
+									<a class="blog-img">
 										<img class="img-responsive" src="<c:url value="/images/pjt_hf.png" />">
-										<div class="overlay"></div>
-										<div class="link">
-											<span class="read">Read more</span>
-										</div>
 									</a>
 									<div class="desc">
-										<span class="meta"><i class="fa fa-calendar"></i> 2020.07 ~ 2021.05</span>
+										<span class="meta"><i class="fa fa-calendar"></i> 2020.07 ~ 2020.12</span>
 										<h2>
 											<a>한국주택금융공사</a>
 										</h2>
@@ -252,12 +225,8 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="javascript: getPjtDetail('korail');" class="blog-img"> 
+									<a class="blog-img">
 										<img class="img-responsive" src="<c:url value="/images/pjt_korail.png" />">
-										<div class="overlay"></div>
-										<div class="link">
-											<span class="read">Read more</span>
-										</div>
 									</a>
 									<div class="desc">
 										<span class="meta"><i class="fa fa-calendar"></i> 2019.08 ~ 2020.07</span>
@@ -276,12 +245,8 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="javascript: getPjtDetail('nps');" class="blog-img"> 
+									<a class="blog-img">
 										<img class="img-responsive" src="<c:url value="/images/pjt_nps.png " />">
-										<div class="overlay"></div>
-										<div class="link">
-											<span class="read">Read more</span>
-										</div>
 									</a>
 									<div class="desc">
 										<span class="meta"><i class="fa fa-calendar"></i> 2019.02 ~ 2019.07</span>
@@ -300,12 +265,8 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="javascript: getPjtDetail('nec');" class="blog-img"> 
+									<a class="blog-img">
 										<img class="img-responsive" src="<c:url value="/images/pjt_nec.png" />">
-										<div class="overlay"></div>
-										<div class="link">
-											<span class="read">Read more</span>
-										</div>
 									</a>
 									<div class="desc">
 										<span class="meta"><i class="fa fa-calendar"></i> 2018.12 ~ 2019.01</span>
@@ -324,12 +285,8 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="javascript: getPjtDetail('ssis');" class="blog-img"> 
+									<a class="blog-img">
 										<img class="img-responsive" src="<c:url value="/images/pjt_ssis.png" />">
-										<div class="overlay"></div>
-										<div class="link">
-											<span class="read">Read more</span>
-										</div>
 									</a>
 									<div class="desc">
 										<span class="meta"><i class="fa fa-calendar"></i> 2018.07 ~ 2018.12</span>
@@ -348,12 +305,8 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="javascript: getPjtDetail('handy');" class="blog-img"> 
+									<a class="blog-img">
 										<img class="img-responsive" src="<c:url value="/images/pjt_handy.png" />">
-										<div class="overlay"></div>
-										<div class="link">
-											<span class="read">Read more</span>
-										</div>
 									</a>
 									<div class="desc">
 										<span class="meta"><i class="fa fa-calendar"></i> 2017.07 ~ 2019.01</span>
@@ -371,8 +324,6 @@
 						</div>
 					</div>
 				</div>
-				<pre id="pjtDetail" class="dn">
-				</pre>
 			</div>
 		</div>
 
