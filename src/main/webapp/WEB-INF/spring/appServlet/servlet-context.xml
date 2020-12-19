@@ -6,12 +6,13 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:task="http://www.springframework.org/schema/task"
 	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
-		http://www.springframework.org/schema/task 
-		http://www.springframework.org/schema/task/spring-task.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
@@ -67,5 +68,41 @@
 	
 	<!-- AOP -->
 	<aop:aspectj-autoproxy/>
+	
+	<!-- 트랜잭션 관리자 활성화 -->
+    <tx:annotation-driven/>
+    
+    <!-- 트랜잭션 관리자 등록 -->
+    <beans:bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <beans:property name="dataSource" ref="dataSource" />
+    </beans:bean>
+    
+    <!-- JPA 예외를 스프링 예외로 변환 -->
+    <beans:bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+    
+    <!-- JPA 설정 ( 엔티티 매니저 팩토리 등록 ) -->
+    <beans:bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <beans:property name="dataSource" ref="dataSource" />
+        
+        <!-- @Entity 탐색 범위 -->
+        <beans:property name="packagesToScan" value="app.web.choi.domain" />
+        
+        <!-- 하이버네이트 구현체 사용 -->
+        <beans:property name="jpaVendorAdapter">
+            <beans:bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+        </beans:property>
+        
+        <!-- 하이버네이트 상세 설정 -->
+        <beans:property name="jpaProperties">
+            <beans:props>
+                <beans:prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</beans:prop> <!-- 방언 -->
+                <beans:prop key="hibernate.show_sql">true</beans:prop>                          <!-- SQL 보기 -->
+                <beans:prop key="hibernate.format_sql">true</beans:prop>                        <!-- SQL 정렬해서 보기 -->
+                <beans:prop key="hibernate.use_sql_comments">true</beans:prop>                  <!-- SQL 주석 보기 -->
+                <beans:prop key="hibernate.id.new_generator_mappings">true</beans:prop>         <!-- JPA 표준에 맞게 새로운 키 생성 전략을 사용-->
+                <beans:prop key="hibernate.hbm2ddl.auto">create</beans:prop>                    <!-- DDL 자동 생성 -->
+            </beans:props>
+        </beans:property>
+    </beans:bean>
 	
 </beans:beans>
