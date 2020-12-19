@@ -10,27 +10,22 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class Interceptor extends HandlerInterceptorAdapter {
 
-    private static final Logger logger = LoggerFactory.getLogger(Interceptor.class);
+	private static final Logger logger = LoggerFactory.getLogger(Interceptor.class);
 
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+		logger.info("Interceptor preHandle : " + request.getRequestURI());
+		return true;
+	}
 
-        logger.info("Interceptor preHandle : " + request.getRequestURI());
+	@Override
+	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
+		logger.info("Interceptor postHandle : " + request.getRequestURI());
+	}
 
-
-        return true;
-    }
-
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
-
-        logger.info("Interceptor postHandle : " + request.getRequestURI());
-    }
-
-    @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
-
-        logger.info("Interceptor afterCompletion : " + request.getRequestURI());
-    }
+	@Override
+	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
+		logger.info("Interceptor afterCompletion : " + request.getRequestURI());
+	}
 
 }
