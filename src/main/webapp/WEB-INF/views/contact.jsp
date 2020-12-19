@@ -101,7 +101,7 @@
 								<ul class="contact-info">
 									<li><span><i class="icon-phone4"></i></span>+82 10-4884-8084</li>
 									<li><span><i class="icon-envelope2"></i></span>younggeunn@naver.com</li>
-									<li><span><i class="icon-globe3"></i></span><a href="http://27.96.134.221:8080/choi">http://27.96.134.221:8080/choi</a></li>
+									<li><span><i class="icon-globe3"></i></span><a href="<c:out value="${serverDomain}" />"><c:out value="${serverDomain}" /></a></li>
 								</ul>
 							</div>
 							<div class="col-md-7 col-md-push-1 animate-box">								

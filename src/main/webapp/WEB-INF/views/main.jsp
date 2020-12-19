@@ -125,9 +125,9 @@
 												content: {
 													title: "Choi's WEB",
 												    description: '',
-												    imageUrl: 'http://27.96.134.221:8080/choi/images/about.jpg',
+												    imageUrl: '<c:out value="${serverDomain}" />/images/about.jpg',
 												    link: {
-												      mobileWebUrl: 'http://27.96.134.221:8080/choi',
+												      mobileWebUrl: '<c:out value="${serverDomain}" />',
 												    },
 												},
 												success: function(response) {

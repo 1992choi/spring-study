@@ -10,6 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 	
+	@Value("${server.domain}") 
+	private String serverDomain;
+	
 	@Value("${kakao.js.key}") 
 	private String kakaoJsKey;
 	
@@ -17,6 +20,7 @@ public class MainController {
 	public ModelAndView main() {
 		ModelAndView mav = new ModelAndView("main");
 		mav.addObject("kakaoJsKey", kakaoJsKey);
+		mav.addObject("serverDomain", serverDomain);
 		return mav;
 	}
 	

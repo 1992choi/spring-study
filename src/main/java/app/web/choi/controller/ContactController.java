@@ -26,10 +26,15 @@ public class ContactController {
 	
 	@Value("${mail.password}") 
 	private String mailPassword;
+	
+	@Value("${server.domain}") 
+	private String serverDomain;
 
 	@RequestMapping(value = "/contact.do", method = RequestMethod.GET)
-	public String contact() {
-		return "contact";
+	public ModelAndView contact() {
+		ModelAndView mav = new ModelAndView("contact");
+		mav.addObject("serverDomain", serverDomain);
+		return mav;
 	}
 	
 	@RequestMapping(value = "/contact/sendMail.json")
