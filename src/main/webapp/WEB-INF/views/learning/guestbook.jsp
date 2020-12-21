@@ -27,6 +27,28 @@
 <script type="text/javascript" src="<c:url value="/js/jquery.magnific-popup.min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/magnific-popup-options.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/main.js" />"></script>
+<script type="text/javascript">	
+	function add() {
+		var addFrm = document.addFrm;
+		if (addFrm.name.value == '' || addFrm.message.value == '') {
+			alert('모든 항목을 입력하세요.');
+			return;
+		}
+		addFrm.submit();
+	}
+
+	function modify(id) {
+		if (confirm("정말 수정하시겠습니까?")){
+			location.href = '<c:url value="/guestbook/modify.do" />?id=' + id;
+		}
+	}
+	
+	function del(id) {
+		if (confirm("정말 삭제하시겠습니까?")){
+			location.href = '<c:url value="/guestbook/delete.do" />?id=' + id;
+		}
+	}
+</script>
 </head>
 <body>
 	<jsp:include page="../menu.jsp" />
@@ -50,10 +72,49 @@
 				<div class="row text-center">
 					<h2 class="bold">JPA</h2>
 				</div>
+				<div class="row cst_pd_top100">
+					<div class="col-md-12">
+						<div class="rotate">
+							<h2 class="heading">ADD</h2>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-md-12">
+						<div class="article">
+							<form name="addFrm" method="post" action="<c:url value="/guestbook/add.do" />">
+								<a class="text_deco_none" href="javascript: add();">
+									<i class="icon-bubble4"></i>
+								</a>
+								<div class="desc">
+									<input type="text" class="cst_width_100per" name="name" placeholder="작성자">
+								</div>
+								<div class="desc">
+									<input type="text" class="cst_width_100per" name="message" placeholder="내용">
+								</div>								
+							</form>
+						</div>
+					</div>						
+				</div>
 				<div class="row">
-					<c:forEach items="${list}" var="list">
-						<div><c:out value="${list.name}" /> : <c:out value="${list.message}" /></div>
-					</c:forEach>
+					<div class="col-md-12">
+						<div class="rotate">
+							<h2 class="heading">LIST</h2>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-md-12">
+						<div class="article">
+							<c:forEach items="${list}" var="list">
+								<div>
+									<c:out value="${list.name}" /> : <c:out value="${list.message}" />
+									<a href="javascript: modify('<c:out value="${list.id}" />');"><i class="icon-pencil"></i></a>
+									<a href="javascript: del('<c:out value="${list.id}" />');"><i class="icon-delete2"></i></a>
+								</div>
+							</c:forEach>
+						</div>
+					</div>						
 				</div>
 			</div>
 		</div>

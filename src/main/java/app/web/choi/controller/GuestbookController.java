@@ -27,10 +27,48 @@ public class GuestbookController {
 		ModelAndView mav = new ModelAndView("learning/guestbook");
 		try {
 			List<Guestbook> guestbookList = guestbookService.getMessageList();
-			System.out.println(guestbookList);
 			mav.addObject("list", guestbookList);
 		} catch (Exception e) {
 			logger.error("[GuestbookController] getList Exception : " + e.toString());
+		}
+		
+		return mav;
+	}
+    
+    @RequestMapping(value = "/guestbook/add.do", method = RequestMethod.POST)
+	public ModelAndView add(Guestbook guestbook) {
+		
+    	ModelAndView mav = new ModelAndView("redirect:/guestbook/list.do");
+		try {
+			guestbookService.add(guestbook);
+		} catch (Exception e) {
+			logger.error("[GuestbookController] add Exception : " + e.toString());
+		}
+		
+		return mav;
+	}
+    
+    @RequestMapping(value = "/guestbook/modify.do", method = RequestMethod.GET)
+	public ModelAndView modify(Guestbook guestbook) {
+		
+    	ModelAndView mav = new ModelAndView("redirect:/guestbook/list.do");
+    	try {
+			guestbookService.modify(guestbook);
+		} catch (Exception e) {
+			logger.error("[GuestbookController] modify Exception : " + e.toString());
+		}
+		
+		return mav;
+	}
+    
+    @RequestMapping(value = "/guestbook/delete.do", method = RequestMethod.GET)
+	public ModelAndView delete(Guestbook guestbook) {
+		
+    	ModelAndView mav = new ModelAndView("redirect:/guestbook/list.do");
+		try {
+			guestbookService.del(guestbook);
+		} catch (Exception e) {
+			logger.error("[GuestbookController] delete Exception : " + e.toString());
 		}
 		
 		return mav;

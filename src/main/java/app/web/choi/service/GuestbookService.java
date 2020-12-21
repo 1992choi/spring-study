@@ -8,4 +8,10 @@ public interface GuestbookService {
 	
 	List<Guestbook> getMessageList() throws Exception;
 	
+	void add(Guestbook guestbook) throws Exception;
+	
+	void modify(Guestbook guestbook) throws Exception;
+	
+	void del(Guestbook guestbook) throws Exception;
+	
 }
