@@ -22,6 +22,7 @@
 									<li><a href="<c:url value="/learning/algorithm.do" />">Algorithm</a></li>
 									<li><a href="<c:url value="/learning/mybatis.do" />">MyBatis</a></li>
 									<li><a href="<c:url value="/guestbook/list.do" />">JPA</a></li>
+									<li><a href="<c:url value="/learning/pagination.do" />">Pagination</a></li>
 								</ul>
 							</li>
 							<li>

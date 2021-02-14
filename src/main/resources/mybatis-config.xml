@@ -6,5 +6,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="app.web.choi.vo.MemberVO" alias="memberVO"/>
+		<typeAlias type="app.web.choi.vo.BoardVO" alias="boardVO"/>
 	</typeAliases>
 </configuration>
