@@ -77,7 +77,7 @@
 				<div class="item">
 					<br> <br> <br>
 					리스트 갯수 : 
-					<select id="pageUnit">
+					<select id="pageUnit" onchange="javascript: pagination('1');">
 						<option value="10" <c:if test="${pageUnit eq '10'}">selected</c:if>>10</option>
 						<option value="30" <c:if test="${pageUnit eq '30'}">selected</c:if>>30</option>
 						<option value="50" <c:if test="${pageUnit eq '50'}">selected</c:if>>50</option>
@@ -94,23 +94,23 @@
 					</c:forEach>
 					<br> <br> <br>
 					<ul class="pagination">
-						<c:if test="${!isFirstPageBlock}">
-							<li><a href="javascript: pagination('1')">&lt;&lt;</a></li>
-							<li><a href="javascript: pagination('${startPage - 1}')">&lt;</a></li>
+						<c:if test="${startPage ne 1}">
+							<li><a href="javascript: pagination('1');">&lt;&lt;</a></li>
+							<li><a href="javascript: pagination('${startPage - 1}');">&lt;</a></li>
 						</c:if>
 						<c:forEach var="i" begin="${startPage}" end="${endPage}" step="1">
 							<c:choose>
 								<c:when test="${i eq cp}">
-									<li class="active"><a href="javascript: pagination('${i}')">${i}</a></li>
+									<li class="active"><a href="javascript: pagination('${i}');">${i}</a></li>
 								</c:when>
 								<c:otherwise>
-									<li><a href="javascript: pagination('${i}')">${i}</a></li>
+									<li><a href="javascript: pagination('${i}');">${i}</a></li>
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
 						<c:if test="${cp ne finalPage && finalPage > 10}">
-							<li><a href="javascript: pagination('${endPage + 1}')">&gt;</a></li>
-							<li><a href="javascript: pagination('${finalPage}')">&gt;&gt;</a></li>
+							<li><a href="javascript: pagination('${endPage + 1}');">&gt;</a></li>
+							<li><a href="javascript: pagination('${finalPage}');">&gt;&gt;</a></li>
 						</c:if>
 					</ul>
 				</div>

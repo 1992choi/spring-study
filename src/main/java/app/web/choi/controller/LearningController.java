@@ -94,30 +94,29 @@ public class LearningController {
 		ModelAndView mav = new ModelAndView("learning/pagination");
 		
 		// pagination START
-		int paginationCnt = 10; // 페이지네이션 버튼 갯수
-		int totalCount = 301;
-		int startNum = 1;
-		int endNum = 10;
+		int totalCount = 301; // 총 갯수
+		int pageLength = 10; // 페이지네이션 버튼 갯수
 		int finalPage = (totalCount + (pageUnit - 1)) / pageUnit; // 마지막 페이지
-		
 		if (cp < 1) {
 			cp = 1;
 		}
 		
+		int startNum = 1;
+		int endNum = 10;			
 		startNum = (cp - 1) * pageUnit + 1;
 		endNum = cp * pageUnit;
 		
-		int startPage = ((cp - 1) / pageUnit) * paginationCnt + 1;
-		int endPage = startPage + paginationCnt - 1;
-		if (endPage >= finalPage) {
+		int currentBlock = cp % pageLength == 0 ? cp / pageLength : (cp / pageLength) + 1;
+		int startPage = (currentBlock - 1) * pageLength + 1;
+		int endPage = startPage + pageLength - 1;
+		if (endPage > finalPage) {
 			endPage = finalPage;
 		}
 		mav.addObject("cp", cp);
 		mav.addObject("startPage", startPage);
 		mav.addObject("endPage", endPage);
 		mav.addObject("finalPage", finalPage);
-		mav.addObject("pageUnit", pageUnit);
-		mav.addObject("isFirstPageBlock", cp / paginationCnt == 0 ? true : false);
+		mav.addObject("pageUnit", pageUnit);	
 		// pagination END
 		
 		Map<String, Object> param = new HashMap<String, Object>();
