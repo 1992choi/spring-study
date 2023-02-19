@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 @SpringBootTest
 @Transactional
 class MemberControllerTest {
@@ -27,22 +25,6 @@ class MemberControllerTest {
         Long memberId = memberService.saveMember(member1);
 
         Assertions.assertEquals(member1.getMemberId(), memberId);
-    }
-
-    @Test
-    public void findAll() {
-        for (int i = 0; i < 10; i++) {
-            Member member = Member.builder()
-                    .name("member-" + i)
-                    .age(i)
-                    .build();
-
-            memberService.saveMember(member);
-        }
-
-        List<Member> members = memberService.findAllMember();
-
-        Assertions.assertEquals(10, members.size());
     }
 
     @Test

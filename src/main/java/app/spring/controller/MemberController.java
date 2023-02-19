@@ -1,5 +1,6 @@
 package app.spring.controller;
 
+import app.spring.domain.ResponseData;
 import app.spring.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +19,15 @@ public class MemberController {
      */
     @GetMapping("/members")
     public ResponseEntity findMembers() {
+        ResponseData responseData = ResponseData.builder()
+                .resultCode("0000")
+                .resultMessage("SUCCESS")
+                .resultData(memberService.findAllMember())
+                .build();
+
         return ResponseEntity
                 .ok()
-                .body(memberService.findAllMember());
+                .body(responseData);
     }
 
     /**
@@ -28,9 +35,15 @@ public class MemberController {
      */
     @GetMapping("/members/{memberId}")
     public ResponseEntity findMember(@PathVariable Long memberId) {
+        ResponseData responseData = ResponseData.builder()
+                .resultCode("0000")
+                .resultMessage("SUCCESS")
+                .resultData(memberService.findMember(memberId))
+                .build();
+
         return ResponseEntity
                 .ok()
-                .body(memberService.findMember(memberId));
+                .body(responseData);
     }
 
 
