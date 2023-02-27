@@ -1,6 +1,8 @@
 management:
+  server:
+    port: 8090
   endpoints:
     web:
+      base-path: /custom-actuator
       exposure:
-        include: "*" #모든 항목 활성화
-        exclude: env, beans #evn와 beans는 비활성화
+        include: health
