@@ -1,8 +1,5 @@
 management:
-  server:
-    port: 8090
   endpoints:
     web:
-      base-path: /custom-actuator
       exposure:
-        include: health
+        include: health, info, metrics, prometheus
