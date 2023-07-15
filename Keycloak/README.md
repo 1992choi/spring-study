@@ -67,6 +67,6 @@
   <img src="https://github.com/Young-Geun/Spring-Study/blob/main/Keycloak/docs/token_1.PNG" width="900px" height="500px"></img><br><br>
 
 
-### 1.3.1. 토큰생성
+### 1.3.2. 토큰생성
 - client_id, client_secret, user_name, password를 입력한 후 서버로 요청을 보낸다.      
   <img src="https://github.com/Young-Geun/Spring-Study/blob/main/Keycloak/docs/token_2.PNG" width="900px" height="500px"></img>
