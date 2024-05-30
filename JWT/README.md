@@ -6,9 +6,9 @@
 ### 1.1. 인증 방식 종류
 - 서버가 클라이언트를 인증하는 방식으로는 대표적으로 '세션/쿠키'을 이용하는 방식과 '토큰'을 이용하는 방식이 있다.  
   \- 세션/쿠키   
-  <img src="https://github.com/Young-Geun/Spring-Study/blob/main/JWT/docs/session.png" width="800" /><br><br><br><br><br>
+  <img src="https://github.com/1992choi/spring-study/blob/main/JWT/docs/session.png" width="800" /><br><br><br><br><br>
   \- 토큰   
-  <img src="https://github.com/Young-Geun/Spring-Study/blob/main/JWT/docs/token.png" width="800" /><br><br><br><br><br>
+  <img src="https://github.com/1992choi/spring-study/blob/main/JWT/docs/token.png" width="800" /><br><br><br><br><br>
 ### 1.2. 인증 방식별 장단점
 - 세션/쿠키 장점   
   \- 세션 ID를 즉시 무효화할 수 있다.   
@@ -48,7 +48,7 @@
 
 ## 4. JWT 인증
 ### 4.1. JWT 인증과정
-<img src="https://github.com/Young-Geun/Spring-Study/blob/main/JWT/docs/jwt.png" width="800" /><br>
+<img src="https://github.com/1992choi/spring-study/blob/main/JWT/docs/jwt.png" width="800" /><br>
 1. 클라이언트는 ID와 PASSWORD를 사용하여 로그인을 시도한다. 
 2. 서버는 로그인 정보를 토대로 유효한 사용자인지 판단한다.
 3. 유효한 사용자인 경우, Access토큰과 Refresh토큰을 발급한다.
